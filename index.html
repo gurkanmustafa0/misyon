@@ -2,43 +2,128 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Misyon">
-<meta name="theme-color" content="#0b0f1a"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#0E1013"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png">
 <title>1 Ocak Misyonu</title>
 <style>
-:root{--bg:#0b0f1a;--c:#151b2b;--c2:#1e2638;--t:#e8ecf5;--m:#8b95ab;--o:#ff6b35;--g:#22d3a0;--y:#fbbf24;--r:#f43f5e;--b:#60a5fa}
+:root{
+ --bg:#0E1013;--s1:#16181D;--s2:#1D2026;--line:#252932;
+ --t:#ECEDEF;--m:#868C97;--dim:#5B616B;
+ --a:#E0A33E;--a2:#8E6A24;--ok:#6FB58A;--warn:#C0637C;
+ --r:16px;--pad:18px;--ease:cubic-bezier(.22,.61,.36,1)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:var(--bg);color:var(--t);font:16px -apple-system,system-ui,sans-serif;padding:env(safe-area-inset-top) 0 calc(78px + env(safe-area-inset-bottom))}
-main{padding:14px;max-width:560px;margin:auto}
-.card{background:var(--c);border-radius:16px;padding:14px;margin-bottom:12px}
-h1{font-size:13px;letter-spacing:.2em;color:var(--o);margin:4px 0 10px}
-h2{font-size:12px;letter-spacing:.12em;color:var(--m);margin:0 0 10px;text-transform:uppercase}
-.big{font-size:32px;font-weight:800}.mut{color:var(--m);font-size:13px}
-.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:8px 0}
-.bar{height:8px;background:var(--c2);border-radius:4px;overflow:hidden;flex:1}.bar i{display:block;height:100%;background:var(--o)}
-.pill{padding:4px 10px;border-radius:99px;font-size:12px;font-weight:800;background:var(--c2)}
-.g{color:var(--g)}.y{color:var(--y)}.r{color:var(--r)}.b{color:var(--b)}
-.seg{display:flex;gap:6px;margin:6px 0 12px}.seg button{flex:1;padding:12px 4px;border:0;border-radius:12px;background:var(--c2);color:var(--t);font-weight:700;font-size:14px}
-.seg button.on{color:#000}.seg button.on.g{background:var(--g)}.seg button.on.y{background:var(--y)}.seg button.on.r{background:var(--r)}.seg button.on.b{background:var(--b)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{font-size:12px;color:var(--m);display:block}
-input,textarea,select{width:100%;background:var(--c2);border:0;border-radius:10px;color:var(--t);padding:11px;font-size:16px;margin-top:4px;font-family:inherit}
-.btn{width:100%;padding:14px;border:0;border-radius:12px;background:var(--o);color:#000;font-weight:800;font-size:16px;margin-top:8px}.btn.s{background:var(--c2);color:var(--t)}
-nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#0e1424;border-top:1px solid var(--c2);padding-bottom:env(safe-area-inset-bottom)}
-nav button{flex:1;background:none;border:0;color:var(--m);padding:9px 0 7px;font-size:10px}nav button b{display:block;font-size:20px;font-weight:400}nav button.on{color:var(--o)}
-table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:6px 3px;text-align:left;border-bottom:1px solid var(--c2)}th{color:var(--m);font-weight:600}
-.bg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bd{padding:10px;border-radius:12px;background:var(--c2);font-size:12px;opacity:.4}.bd.u{opacity:1;border:1px solid var(--o)}
-.ch{width:100%;height:90px}.mb{padding:10px 12px;border-radius:14px;margin:8px 0;max-width:88%;line-height:1.4;font-size:15px}.mu{background:var(--o);color:#000;margin-left:auto}.ma{background:var(--c2)}.chip{display:inline-block;width:auto!important;padding:8px 12px!important;font-size:13px!important;font-weight:600!important;margin:4px 4px 0 0!important}.nv{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.nv button{background:var(--c2);border:0;color:var(--t);width:44px;height:44px;border-radius:12px;font-size:20px}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--t);font:400 16px/1.45 -apple-system,system-ui,"SF Pro Text",sans-serif;
+ padding:env(safe-area-inset-top) 0 calc(76px + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+main{padding:10px 16px 8px;max-width:520px;margin:auto}
+h1{font-size:19px;font-weight:600;letter-spacing:-.02em;margin:10px 0 2px}
+h2{font-size:13px;font-weight:500;color:var(--m);margin:0 0 10px;letter-spacing:0}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum";letter-spacing:-.03em}
+.card{background:var(--s1);border-radius:var(--r);padding:var(--pad);margin-bottom:10px}
+.card+.card{margin-top:0}
+.hero{background:var(--s1)}
+.mut{color:var(--m);font-size:13.5px}
+.big{font-size:34px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.big2{font-size:46px;font-weight:300;font-variant-numeric:tabular-nums;letter-spacing:-.04em;line-height:1}
+.big2 small{font-size:15px;color:var(--m);font-weight:400;letter-spacing:0}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:9px 0}
+.row:last-child{margin-bottom:0}
+.tap{cursor:pointer;transition:opacity .15s var(--ease),transform .15s var(--ease)}
+.tap:active{transform:scale(.985);opacity:.7}
+.bar{height:3px;background:var(--s2);border-radius:2px;overflow:hidden;flex:1}
+.bar i{display:block;height:100%;background:var(--a);border-radius:2px;width:0;animation:fill .7s var(--ease) forwards}
+@keyframes fill{to{width:var(--w)}}
+.pill{font-size:12px;color:var(--m);padding:5px 10px;border-radius:99px;background:var(--s2)}
+.pill.g{color:var(--ok)}.pill.y{color:var(--a)}.pill.r{color:var(--warn)}
+.g{color:var(--ok)}.y{color:var(--a)}.r{color:var(--warn)}.b{color:var(--t)}
+/* meters */
+.mt{margin:14px 0 0}.mt:first-child{margin-top:4px}
+.mt .lab{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.mt .lab span{font-size:14px}.mt .lab b{font-size:15px;font-weight:500;font-variant-numeric:tabular-nums}
+.mt .lab b small{color:var(--dim);font-weight:400;font-size:12.5px}
+/* segmented control */
+.seg{display:flex;gap:6px;margin:4px 0 2px}
+.seg button{flex:1;padding:12px 4px;border:0;border-radius:11px;background:var(--s2);color:var(--m);font:500 14px/1 inherit;transition:.18s var(--ease)}
+.seg button.on{background:var(--t);color:var(--bg)}
+.seg button.on.g{background:var(--ok);color:#06130D}.seg button.on.y{background:var(--a);color:#1A1204}.seg button.on.r{background:var(--warn);color:#1A0710}.seg button.on.b{background:var(--t);color:var(--bg)}
+.seg button:active{transform:scale(.97)}
+/* steppers */
+.st{display:flex;align-items:center;gap:6px;margin:10px 0}
+.st label{flex:1;font-size:15px;color:var(--t);margin:0}
+.st input{width:56px;text-align:center;margin:0;padding:9px 2px;background:transparent;border:1px solid var(--line)}
+.st button{background:var(--s2);border:0;color:var(--t);border-radius:10px;width:42px;height:40px;font:500 14px/1 inherit;transition:.15s var(--ease)}
+.st button:active{background:var(--a);color:#1A1204}
+label{font-size:12.5px;color:var(--m);display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input,textarea,select{width:100%;background:var(--s2);border:0;border-radius:11px;color:var(--t);padding:12px;font:400 16px/1.45 -apple-system,system-ui,sans-serif;margin-top:5px;resize:none}
+input:focus,textarea:focus{outline:1.5px solid var(--a2)}
+.btn{width:100%;padding:14px;border:0;border-radius:12px;background:var(--a);color:#1A1204;font:600 15px/1 inherit;margin-top:10px;transition:.15s var(--ease)}
+.btn:active{transform:scale(.99);filter:brightness(.92)}
+.btn.s{background:var(--s2);color:var(--t)}
+.btn[disabled]{opacity:.5}
+.chip{width:auto!important;padding:9px 13px!important;font-size:13.5px!important;font-weight:500!important;margin:6px 6px 0 0!important;border-radius:99px!important;background:var(--s2)!important;color:var(--t)!important}
+/* nav */
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(14,16,19,.97);backdrop-filter:blur(20px) saturate(140%);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;background:none;border:0;color:var(--dim);padding:9px 0 6px;font-size:10.5px;display:flex;flex-direction:column;align-items:center;gap:3px;transition:color .2s var(--ease)}
+nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+nav button.on{color:var(--a)}
+.top{display:flex;align-items:flex-start;gap:12px;margin:8px 0 14px}.top>div{flex:1}
+.gear{background:none;border:0;color:var(--m);width:36px;height:36px;padding:0}
+.gear svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.6}
+/* chain */
+.cg{display:grid;grid-template-columns:repeat(15,1fr);grid-auto-flow:column;grid-template-rows:repeat(7,1fr);gap:4px;margin-top:14px}
+.cg i{height:13px;border-radius:3px;background:var(--s2);transition:.2s var(--ease)}
+.cf{display:grid;grid-template-columns:22px repeat(7,1fr);gap:5px;align-items:center;margin-top:12px}
+.cell{display:flex;flex-direction:column;align-items:center;justify-content:center;height:38px;border-radius:9px;background:var(--s2);font-variant-numeric:tabular-nums}
+.cell small{font-size:8px;line-height:1;color:var(--dim)}.cell b{font-size:13px;font-weight:500}
+.s-c{background:var(--ok)!important;color:#06130D}.s-c small{color:#06130D;opacity:.6}
+.s-n{background:var(--a2)!important;color:#F3E2C4}.s-n small{color:#F3E2C4;opacity:.6}
+.s-z{background:#3A2029!important;color:var(--warn)}
+.s-m{background:transparent!important;box-shadow:inset 0 0 0 1px var(--line)}
+.s-p{background:transparent!important;box-shadow:inset 0 0 0 1.5px var(--t)}
+.s-f{background:var(--s2)!important;color:var(--dim)}
+.key{display:flex;gap:14px;margin-top:12px;font-size:12px;color:var(--m);align-items:center}
+.key span{display:flex;align-items:center;gap:5px}.key u{width:9px;height:9px;border-radius:2px;display:inline-block}
+/* misc */
+table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+td,th{padding:8px 3px;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--m);font-weight:400;font-size:12.5px}
+tr:last-child td{border-bottom:0}
+.bg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bd{padding:12px;border-radius:12px;background:var(--s2);font-size:12.5px;color:var(--m)}
+.bd.u{color:var(--t);box-shadow:inset 0 0 0 1px var(--a2)}.bd b{display:block;font-weight:500;margin-bottom:2px}
+.ch{width:100%;height:96px}
+.nv{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.nv button{background:none;border:0;color:var(--m);width:40px;height:40px;border-radius:10px;font-size:22px;line-height:1}
+.nv b{font-weight:500;font-size:15px;font-variant-numeric:tabular-nums}
+summary{cursor:pointer;font-size:14.5px;font-weight:500;color:var(--m);list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'';width:7px;height:7px;border-right:1.5px solid var(--dim);border-bottom:1.5px solid var(--dim);transform:rotate(-45deg);transition:transform .2s var(--ease)}
+details[open]>summary::after{transform:rotate(45deg)}
+details>summary{padding:2px 0}
+details[open]>summary{margin-bottom:6px}
+.mb{padding:11px 14px;border-radius:16px;margin:8px 0;max-width:86%;line-height:1.45;font-size:15px}
+.mu{background:var(--s2);margin-left:auto;border-bottom-right-radius:5px}
+.ma{background:transparent;padding-left:0;border:0;max-width:100%}
+.x{background:none;border:0;color:var(--dim);font-size:15px;padding:4px 8px}
+tr.ev td{padding:4px 3px}.evt{width:52px;color:var(--m)}
+.toast{position:fixed;left:16px;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));background:var(--s2);color:var(--t);padding:13px 15px;border-radius:12px;z-index:9;text-align:center;font-size:14px;box-shadow:0 8px 30px rgba(0,0,0,.45);animation:tin .25s var(--ease)}
+@keyframes tin{from{opacity:0;transform:translateY(8px)}}
+#app{animation:pin .22s var(--ease)}
+@keyframes pin{from{opacity:0;transform:translateY(4px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bar i{width:var(--w)}}
 </style></head><body><main id="app"></main>
 <nav id="nav"></nav>
 <script>
-const $=s=>document.querySelector(s),K='misyon1',S0='2026-09-20',N=104;
-const DEF=()=>({days:{},body:{},rev:{},bench:{},cfg:{},food:{},chat:[]}),AK='misyon1_ai',AI=()=>{try{return JSON.parse(localStorage.getItem(AK)||'{}')}catch(e){return{}}},aiSet=(k,v)=>{const a=AI();a[k]=v;localStorage.setItem(AK,JSON.stringify(a))},esc=x=>String(x).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
-let S=Object.assign(DEF(),JSON.parse(localStorage.getItem(K)||'null')||{});
+const $=s=>document.querySelector(s),K='misyon1',S0='2026-09-22',ENDD='2027-01-01';
+const DEF=()=>({days:{},body:{},rev:{},bench:{},cfg:{},food:{},chat:[],rec:[],sched:[]}),AK='misyon1_ai',AI=()=>{try{return JSON.parse(localStorage.getItem(AK)||'{}')}catch(e){return{}}},aiSet=(k,v)=>{try{const a=AI();a[k]=v;localStorage.setItem(AK,JSON.stringify(a))}catch(e){}},esc=x=>String(x).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
+let LSOK=true;try{localStorage.setItem('_t','1');localStorage.removeItem('_t')}catch(e){LSOK=false}
+let S=Object.assign(DEF(),(()=>{try{return JSON.parse(localStorage.getItem(K)||'null')}catch(e){return null}})()||{});
 const D={gk:0,gp:0,rescue:20,target:45,strong:60,stMin:20,spk:10,tot:20,actN:20,totN:45,actS:30,totS:60,sess:4};
-const C=()=>({...D,...S.cfg}),save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){alert('Kayıt başarısız (depolama dolu/engelli). Yedek al!')}};
+const C=()=>({...D,...S.cfg}),save=()=>{if(LSOK){try{localStorage.setItem(K,JSON.stringify(S));return}catch(e){LSOK=false}}if(window.storage){clearTimeout(save.t);save.t=setTimeout(()=>window.storage.set(K,JSON.stringify(S)).catch(()=>{}),300)}else if(!save.w){save.w=1;toast('Kayıt başarısız (depolama engelli). Yedek al!')}};
 const iso=d=>new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10),today=()=>iso(new Date()),dt=s=>new Date(s+'T00:00:00');
 const addD=(s,n)=>{const d=dt(s);d.setDate(d.getDate()+n);return iso(d)},dayN=s=>Math.round((dt(s)-dt(S0))/864e5)+1;
 const SC={LOW:'r',RESCUE:'y',MINIMUM:'y',TARGET:'g',NORMAL:'g',STRONG:'b'};
-const weeks=[...Array(15)].map((_,i)=>({i,s:addD(S0,i*7),len:i==14?6:7}));
+const N=Math.round((dt(ENDD)-dt(S0))/864e5)+1,NW=Math.ceil(N/7);
+const weeks=[...Array(NW)].map((_,i)=>({i,s:addD(S0,i*7),len:Math.min(7,N-i*7)}));
 function calc(e){e=e||{};const c=C(),n=x=>+x||0,st=n(e.st),fr=n(e.fr),dr=st+fr,sp=n(e.sp),li=n(e.li),bk=n(e.bk),pr=n(e.pr),act=sp+pr,pas=li+bk,tot=act+pas;
  const has=['diet','work','tm','st','fr','sp','li','bk','pr'].some(k=>e[k]!==undefined);
  const d=dr>=c.strong&&st>=c.stMin?'STRONG':dr>=c.target&&st>=c.stMin?'TARGET':dr>=c.rescue?'RESCUE':'LOW';
@@ -53,7 +138,7 @@ function wk(i){const w=weeks[i],t=today(),c=C();let el=0,ds=0,wo=0,dr=0,es=0,co=
  const dp=el?ds/el:0,sp=el?Math.min(wo/(c.sess*el/w.len),1):0,dq=el?dr/el:0,eq=el?es/el:0,score=has&&el?Math.round(25*(dp+sp+dq+eq)):null;
  const o={...w,el,dp,sp,dq,eq,score,wo,core:co,xp,tg,sg,drm,acm,tm};o.done=addD(w.s,w.len-1)<t;
  o.perfect=o.done&&dp>=.9&&sp>=1&&dq>=.9&&eq>=.9&&score>=90;const b=BS[i];o.boss={n:b[0],t:b[1],v:b[2](o)};o.cleared=has&&o.boss.v>=b[1];return o}
-const BS=[['CORE DAYS',5,w=>w.core],['TRAINING',4,w=>w.wo],['DRUM TARGET+ DAYS',5,w=>w.tg+w.sg],['ENGLISH QUALITY %',85,w=>w.eq*100],['DIET %',85,w=>w.dp*100],['WEEKLY SCORE',85,w=>w.score||0],['CORE DAYS',6,w=>w.core],['DRUM STRONG DAYS',3,w=>w.sg],['ACTIVE ENGLISH H',3,w=>w.acm/60],['TRAINING',4,w=>w.wo],['DIET %',90,w=>w.dp*100],['WEEKLY SCORE',90,w=>w.score||0],['CORE DAYS',6,w=>w.core],['DRUM HOURS',5,w=>w.drm/60],['WEEKLY SCORE',85,w=>w.score||0]];
+const BS0=[['CORE DAYS',5,w=>w.core],['TRAINING',4,w=>w.wo],['DRUM TARGET+ DAYS',5,w=>w.tg+w.sg],['ENGLISH QUALITY %',85,w=>w.eq*100],['DIET %',85,w=>w.dp*100],['WEEKLY SCORE',85,w=>w.score||0],['CORE DAYS',6,w=>w.core],['DRUM STRONG DAYS',3,w=>w.sg],['ACTIVE ENGLISH H',3,w=>w.acm/60],['TRAINING',4,w=>w.wo],['DIET %',90,w=>w.dp*100],['WEEKLY SCORE',90,w=>w.score||0],['CORE DAYS',6,w=>w.core],['DRUM HOURS',5,w=>w.drm/60],['WEEKLY SCORE',85,w=>w.score||0]],BS=[...Array(NW)].map((_,i)=>BS0[i%BS0.length]);
 const allW=()=>weeks.map((_,i)=>wk(i));
 function totals(){const t=today(),T={xp:0,dr:0,st:0,act:0,pas:0,tot:0,tm:0,wo:0,pr:0,tg:0,bdr:0,ben:0};let el=0,nz=0;
  for(let s=S0;s<=t;s=addD(s,1)){const r=calc(S.days[s]);if(s<t||r.has)el++;if(r.nz)nz++;T.xp+=r.xp;T.dr+=r.dr;T.st+=r.st;T.act+=r.act;T.pas+=r.pas;T.tot+=r.tot;T.tm+=r.tm;T.wo+=r.tr;T.pr+=r.pr>0;T.tg+=r.d==='TARGET'||r.d==='STRONG';T.bdr=Math.max(T.bdr,r.dr);T.ben=Math.max(T.ben,r.tot)}
@@ -63,127 +148,322 @@ function streaks(){const t=today();let a=0,ba=0,c=0,bc=0,cd=0;for(let s=S0;s<=t;
 const LV=[[0,'STARTER'],[500,'LOCKED IN'],[1000,'MOMENTUM'],[1700,'UNSTOPPABLE'],[2500,'BEAST'],[3400,'ELITE'],[4300,'RELENTLESS'],[5200,'MISSION COMPLETE']];
 function lvl(xp){let i=0;LV.forEach((l,k)=>{if(xp>=l[0])i=k});const x=LV[i+1];return{n:i+1,t:LV[i][1],nx:x?x[0]-xp:0,p:x?(xp-LV[i][0])/(x[0]-LV[i][0]):1}}
 const BG=[['FIRST BLOOD','İlk XP',T=>T.xp>0],['7 DAY NZ','7 gün no-zero',(T,s)=>s.nzB>=7],['14 DAY NZ','14 gün no-zero',(T,s)=>s.nzB>=14],['30 CORE DAYS','30 core day',(T,s)=>s.coreDays>=30],['25 TARGET DRUM','25 gün target+',T=>T.tg>=25],['50 DRUM HOURS','50 saat bateri',T=>T.dr>=3000],['30 ACTIVE ENG','30 saat active',T=>T.act>=1800],['50 TOTAL ENG','50 saat İngilizce',T=>T.tot>=3000],['40 WORKOUTS','40 antrenman',T=>T.wo>=40],['BOSS HUNTER','5 boss',(T,s,W)=>W.filter(x=>x.cleared).length>=5],['PERFECT x1','1 perfect week',(T,s,W)=>W.some(x=>x.perfect)],['PERFECT x3','3 perfect week',(T,s,W)=>W.filter(x=>x.perfect).length>=3]];
-const h=m=>(m/60).toFixed(1),bar=(v,m)=>`<div class=bar><i style="width:${Math.max(0,Math.min(100,v/m*100))}%"></i></div>`,st_=s=>s>=90?'BEAST MODE':s>=75?'ON TRACK':s>=60?'HOLD THE LINE':'RESET NEXT DAY';
+const h=m=>(m/60).toFixed(1),bar=(v,m)=>`<div class=bar><i style="--w:${Math.max(0,Math.min(100,v/m*100))}%"></i></div>`,st_=s=>s>=90?'BEAST MODE':s>=75?'ON TRACK':s>=60?'HOLD THE LINE':'RESET NEXT DAY';
 let tab='home',cd=today(),ci='body',bd=today(),rw=null,bs='Baseline';
 const go=t=>{tab=t;render();scrollTo(0,0)};
 function setF(k,v){const e=S.days[cd]=S.days[cd]||{};if(v===''||v==null)delete e[k];else e[k]=['diet','work','note','lift'].includes(k)?v:+v;save();const s=$('#sum');if(s)s.innerHTML=sumH()}
 const tog=(k,v)=>{setF(k,(S.days[cd]||{})[k]===v?'':v);render()},shift=n=>{cd=addD(cd,n);render()};
 const sv=(a,k,f,v)=>{(S[a][k]=S[a][k]||{})[f]=v;save()};
-function sumH(){const r=calc(S.days[cd]),c=C();return`<div class=row><span class=big>${r.xp} <small class=mut>XP</small></span><b class="${r.core?'g':r.nz?'y':'r'}">${r.core?'✓ CORE DAY':r.nz?'NO-ZERO ✓':'ZERO'}</b></div><div class=mut>Drums ${r.dr}/${c.target} dk · <b class="${SC[r.d]}">${r.d}</b><br>English ${r.tot}/${c.totN} dk (active ${r.act}) · <b class="${SC[r.g]}">${r.g}</b></div>`}
-const wi=t=>Math.min(14,Math.max(0,Math.floor((dayN(t)-1)/7))),STD={Baseline:S0,'4w':addD(S0,28),'8w':addD(S0,56),'12w':addD(S0,84),Final:'2027-01-01'},filled=o=>!!o&&Object.values(o).some(v=>v!==''&&v!=null);
+const LBL={LOW:'eksik',RESCUE:'kurtarma',MINIMUM:'minimum',TARGET:'hedef',NORMAL:'normal',STRONG:'güçlü'};
+function sumH(){const r=calc(S.days[cd]),c=C();return`<div class=row style=margin:0><span class="${r.core?'g':r.nz?'':'r'}" style="font-size:15px;font-weight:500">${r.core?'Core Day tamam':r.nz?'Zincir sürüyor':'Henüz boş'}</span><span class="mut num">${r.xp} XP</span></div><div class=mut style=margin-top:8px>Bateri ${r.dr}/${c.target} dk · <span class="${SC[r.d]}">${LBL[r.d]}</span> &nbsp;·&nbsp; İngilizce ${r.tot}/${c.totN} dk · <span class="${SC[r.g]}">${LBL[r.g]}</span></div>`}
+const wi=t=>Math.min(NW-1,Math.max(0,Math.floor((dayN(t)-1)/7))),STD={Baseline:S0,'4w':addD(S0,28),'8w':addD(S0,56),'12w':addD(S0,84),Final:ENDD},filled=o=>!!o&&Object.values(o).some(v=>v!==''&&v!=null);
 const rk=(v,a)=>['Starter','Bronze','Silver','Gold','Platinum'][a.filter(x=>v>=x).length];
-function remH(){const t=today();if(t<S0)return'';const r=[],w=weeks[wi(t)],y=addD(t,-1);
- if(y>=S0&&!calc(S.days[y]).has)r.push(['📅 Dün girilmemiş → doldur',`cd='${y}';go('today')`]);
- if(!Object.keys(S.body).some(d=>d>=w.s&&d<=addD(w.s,w.len-1)&&S.body[d].w))r.push(['⚖️ Haftalık ölçüm: sabah aç karnına kilo + bel',"mo='check';ci='body';go('more')"]);
- const j=weeks.filter(x=>addD(x.s,x.len-2)<=t).length-1;if(j>=0&&!filled(S.rev['W'+(j+1)]))r.push([`📝 Weekly Review W${j+1} (5 dk)`,`mo='check';ci='review';rw=${j};go('more')`]);
- const b=STG.find(g=>STD[g]<=t&&!filled(S.bench['en'+g])&&!filled(S.bench['dr'+g]));if(b)r.push([`🎯 Benchmark: ${b} (aynı prompt + aynı groove)`,`mo='check';ci='bench';bs='${b}';go('more')`]);
- if(t>=addD(S0,6)&&(!S.bk||t>=addD(S.bk,14)))r.push(['💾 Yedek al',"mo='set';go('more')"]);
- return r.length?`<div class=card><h2>Yapılacaklar</h2>${r.map(x=>`<div class=row onclick="${x[1]}" style="cursor:pointer"><span>${x[0]}</span><span class=mut>›</span></div>`).join('')}</div>`:''}
-const homeX=t=>{const f=ftot(t),st=(S.days[t]||{}).steps,g=C().gk;return(f.k?`<div class=row><span>Food</span><span>${f.k}${g?' / '+g:''} kcal · P ${f.p} g</span></div>`:'')+(st?`<div class=row><span>Steps</span><span>${(+st).toLocaleString('tr')}</span></div>`:'')};
+function remH1(){const r=remL(),d=today();return r.length?`<div class=card><div class=row style=margin:0 onclick="${r[0][1]}"><span>${r[0][0]}</span><span class=mut>${r.length>1?'+'+(r.length-1)+' ':''}›</span></div></div>`:''}
+function remL(){const t=today();if(t<S0)return'';const r=[],w=weeks[wi(t)],y=addD(t,-1);if(y>=S0&&!calc(S.days[y]).nz&&!calc(S.days[t]).nz)r.push(['Dün zincir koptu — bugün en az minimumu yap',"cd=today();go('today')"]);
+ if(y>=S0&&!calc(S.days[y]).has)r.push(['Dün girilmemiş',`cd='${y}';go('today')`]);
+ if(!Object.keys(S.body).some(d=>d>=w.s&&d<=addD(w.s,w.len-1)&&S.body[d].w))r.push(['Haftalık ölçüm: kilo + bel',"mo='check';ci='body';go('more')"]);
+ const j=weeks.filter(x=>addD(x.s,x.len-2)<=t).length-1;if(j>=0&&!filled(S.rev['W'+(j+1)]))r.push([`Hafta ${j+1} değerlendirmesi (5 dk)`,`mo='check';ci='review';rw=${j};go('more')`]);
+ const b=STG.find(g=>STD[g]<=t&&!filled(S.bench['en'+g])&&!filled(S.bench['dr'+g]));if(b)r.push([`Benchmark: ${b}`,`mo='check';ci='bench';bs='${b}';go('more')`]);
+ if(t>=addD(S0,6)&&(!S.bk||t>=addD(S.bk,14)))r.push(['Yedek al',"mo='set';go('more')"]);
+ return r}
 const stepsAvg=()=>{const v=[...Array(7)].map((_,i)=>+(S.days[addD(today(),-i)]||{}).steps||0).filter(x=>x>0);return v.length?Math.round(v.reduce((a,b)=>a+b)/v.length).toLocaleString('tr'):'—'};
 const favg=()=>{const v=[...Array(7)].map((_,i)=>ftot(addD(today(),-i))).filter(x=>x.k>0),m=k=>Math.round(v.reduce((a,b)=>a+b[k],0)/v.length);return v.length?m('k')+' kcal · P '+m('p')+' g':'—'};
-async function bak(){S.bk=today();save();const j=localStorage.getItem(K);try{const f=new File([j],'misyon-yedek-'+today()+'.json',{type:'application/json'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){if(e.name==='AbortError')return}
- navigator.clipboard.writeText(j).then(()=>alert('Kopyalandı — Notlar’a yapıştır'),()=>alert('Kopyalanamadı'))}
-function impF(i){const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result);if(!o.days)throw 0;S=Object.assign(DEF(),o);save();alert('Yüklendi');render()}catch(e){alert('Geçersiz yedek')}};r.readAsText(i.files[0])}
+async function bak(){S.bk=today();save();const j=JSON.stringify(S);try{const f=new File([j],'misyon-yedek-'+today()+'.json',{type:'application/json'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){if(e.name==='AbortError')return}
+ navigator.clipboard.writeText(j).then(()=>toast('Kopyalandı — Notlar’a yapıştır'),()=>toast('Kopyalanamadı'))}
+function impF(i){const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result);if(!o.days)throw 0;S=Object.assign(DEF(),o);save();toast('Yüklendi');render()}catch(e){toast('Geçersiz yedek')}};r.readAsText(i.files[0])}
 function jan(){const T=totals(),s=streaks(),B=Object.entries(S.body).sort(),fw=B.filter(x=>x[1].w).map(x=>+x[1].w),fc=B.filter(x=>x[1].c).map(x=>+x[1].c),ff=B.filter(x=>x[1].fat).map(x=>+x[1].fat),R=(a,b)=>`<div class=row><span>${a}</span><b>${b}</b></div>`;
  const fb=a=>a.length>1?a[0]+' → '+a[a.length-1]+' ('+(a[a.length-1]-a[0]).toFixed(1)+')':'—',ch=(p,i)=>{const v=STG.map(g=>(S.bench[p+g]||{})['f'+i]).filter(x=>x!==undefined&&x!=='').map(Number);return v.length>1?v[0]+' → '+v[v.length-1]:'—'};
  return`<div class=card><h2>Jan 1 review · before → after</h2>${R('Weight kg',fb(fw))}${R('Waist cm',fb(fc))}${R('Body fat %',fb(ff))}${R('Workouts / saat',T.wo+' / '+h(T.tm))}${R('Drums total / structured h',h(T.dr)+' / '+h(T.st))}${R('English total / active / passive h',h(T.tot)+' / '+h(T.act)+' / '+h(T.pas))}${R('Preply',T.pr)}${R('Core days · best no-zero',s.coreDays+' · '+s.nzB)}${[['Eng fluency','en',3],['Eng accuracy','en',4],['Eng vocabulary','en',5],['Drums BPM','dr',1],['Drums timing','dr',6],['Drums control','dr',7]].map(x=>R(x[0],ch(x[1],x[2]))).join('')}
  ${['What changed the most?','What habit was hardest to keep?','What actually worked?','What continues into 2027?'].map((q,i)=>fl('rev','jan','q'+i,[q,'t'])).join('')}</div>`}
-function home(){const t=today(),n=dayN(t),e=S.days[t]||{},r=calc(e),c=C(),s=streaks(),T=totals(),W=allW(),w=W[Math.min(14,Math.max(0,Math.floor((n-1)/7)))],L=lvl(T.xp),sc=w.score;
- const stt=sc==null||sc>=60&&sc<75?'ON TRACK':sc>=75?'LOCKED IN':'WARNING',col=stt=='LOCKED IN'?'g':stt=='WARNING'?'r':'y',miss=[];
- if(e.diet!=='İYİ')miss.push('Diet İYİ');if(r.d==='LOW')miss.push(`Drums +${c.rescue-r.dr} dk`);
- if(r.g==='LOW'){if(r.sp<c.spk)miss.push(`Speaking +${c.spk-r.sp} dk`);if(r.tot<c.tot)miss.push(`English +${c.tot-r.tot} dk`)}
- return`<h1>1 OCAK MİSYONU</h1><div class=card><div class=row><span class=big>DAY ${Math.min(Math.max(n,0),N)} <small class=mut>/ ${N}</small></span><span class="pill ${col}">${stt}</span></div>${bar(n,N)}
- <div class=row><span>🔥 ${s.nz} gün no-zero</span><span class=mut>Core ${s.core} · Adherence ${T.adh}%</span></div></div>
- ${remH()}<div class=card><h2>Today</h2><div class=row><span>Diet</span><b class="${{'İYİ':'g',ORTA:'y','KÖTÜ':'r'}[e.diet]||'mut'}">${e.diet||'—'}</b></div>
- <div class=row><span>Sport</span><b class="${e.work=='TRAINING'?'g':e.work=='MISSED'?'r':'mut'}">${e.work||'—'}</b></div>
- <div class=row><span>Drums</span>${bar(r.dr,c.target)}<span>${r.dr}/${c.target} <b class="${SC[r.d]}">${r.d}</b></span></div>
- <div class=row><span>English</span>${bar(r.tot,c.totN)}<span>${r.tot}/${c.totN} <b class="${SC[r.g]}">${r.g}</b></span></div>
- ${homeX(t)}<div class=row><b>Today XP: ${r.xp}</b>${r.core?'<b class=g>✓ CORE DAY</b>':`<span class=mut>Core Day (+10): ${miss.join(' · ')}</span>`}</div>
- <button class=btn onclick="cd=today();go('today')">Log today</button></div>
- <div class=card><h2>Week ${w.i+1} · ${sc==null?'—':sc+' · '+st_(sc)}</h2><div class=row><span>Boss: ${w.boss.n}</span><b class="${w.cleared?'g':''}">${Math.round(w.boss.v*10)/10}/${w.boss.t}${w.cleared?' ✓':''}</b></div>
- <div class=row><span>Level ${L.n} · ${L.t}</span><span class=mut>${T.xp} XP${L.nx?' · '+L.nx+' to next':''}</span></div>${bar(L.p,1)}</div>`}
+const MO=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'],END=ENDD;
+function dst(d,t){if(d>t)return'f';const r=calc(S.days[d]);return r.core?'c':r.nz?'n':d===t?'p':r.has?'z':'m'}
+const opn=(d,t)=>d<=t?`cd='${d}';go('today')`:'';
+function chainC(){const t=today(),s=streaks();return`<div class=card><div class=row style=margin:0><h2 style=margin:0>Zincir</h2><span class=mut>bu hafta %${wsucc()}</span></div><div class=cg>${weeks.map(w=>[...Array(7)].map((_,k)=>{const d=addD(w.s,k);return d>END?'':`<i class="s-${dst(d,t)}" onclick="${opn(d,t)}"></i>`}).join('')).join('')}</div><div class=key><span><u style=background:var(--ok)></u>core</span><span><u style=background:var(--a2)></u>no-zero</span><span><u style=background:#3A2029></u>sıfır</span><span><u style="box-shadow:inset 0 0 0 1px var(--line)"></u>boş</span></div></div>`}
+const wsucc=()=>{const t=today(),w=weeks[wi(t)];let d=0,n=0;for(let k=0;k<w.len;k++){const s=addD(w.s,k);if(s>t)break;d++;if(calc(S.days[s]).nz)n++}return d?Math.round(100*n/d):0};
+function chainF(){const t=today(),s=streaks(),T=totals(),hd=[...Array(7)].map((_,k)=>`<span class=mut style=text-align:center>${DW[(dow(S0)+k)%7]}</span>`).join('');
+ const rows=weeks.map(w=>`<span class=mut>W${w.i+1}</span>`+[...Array(7)].map((_,k)=>{const d=addD(w.s,k);if(d>END)return'<span></span>';const n=+d.slice(8);return`<div class="cell s-${dst(d,t)}" onclick="${opn(d,t)}">${n==1||d===S0?`<small>${MO[+d.slice(5,7)-1]}</small>`:''}<b>${n}</b></div>`}).join('')).join('');
+ return`<div class=card><h2>Zinciri kırma</h2><div class=row><span class=big>🔥 ${s.nz}</span><span class=mut style=text-align:right>en iyi ${s.nzB} · core zinciri ${s.core} (en iyi ${s.coreB})<br>adherence ${T.adh}%</span></div><div class=cf><span></span>${hd}${rows}</div><div class=key><span><u style=background:var(--ok)></u>core day</span><span><u style=background:var(--a2)></u>no-zero</span><span><u style=background:#3A2029></u>sıfır</span><span><u style="box-shadow:inset 0 0 0 1px var(--line)"></u>girilmemiş</span></div><div class=mut style=margin-top:8px>Güne dokun, o günü aç.</div></div>`}
 let ftx='',fbusy=false,fmsg='';
 const FD=d=>S.food[d]||[],ftot=d=>FD(d).reduce((a,e)=>{e.items.forEach(x=>{a.k+=+x.k||0;a.p+=+x.p||0;a.c+=+x.c||0;a.f+=+x.f||0});return a},{k:0,p:0,c:0,f:0});
 const SYS='Sen bir beslenme tahmin asistanısın. Kullanıcı ne yediğini serbest metinle yazar (genelde Türkçe, Türk mutfağı dahil). Her yiyecek/içecek için porsiyon belirtilmemişse tipik porsiyon varsay; kcal, protein, karbonhidrat ve yağ (gram) tahmin et. SADECE şu JSON ile yanıt ver, başka hiçbir metin yazma: {"items":[{"n":"ad + porsiyon","k":kcal,"p":g,"c":g,"f":g}]}. Sayılar tam sayı olsun. Emin değilsen orta bir değer seç.';
-const num_=v=>Math.max(0,Math.round(+v)||0),addF=(t,items)=>{(S.food[cd]=S.food[cd]||[]).push({id:Date.now(),t,items});save()};
-async function fsend(){const txt=ftx.trim(),ai=AI();if(!txt||fbusy)return;if(!ai.key){fmsg='API anahtarı yok (More → Settings). Şimdilik manuel ekleyebilirsin.';return render()}
- fbusy=true;fmsg='';render();
- try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':ai.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:ai.model||'claude-haiku-4-5-20251001',max_tokens:900,system:SYS,messages:[{role:'user',content:txt}]})});
-  const j=await r.json();if(!r.ok)throw new Error((j.error&&j.error.message)||('HTTP '+r.status));
-  const o=JSON.parse(j.content.map(x=>x.text||'').join('').replace(/```json|```/g,'').trim());if(!Array.isArray(o.items)||!o.items.length)throw new Error('Yemek çıkarılamadı');
-  addF(txt,o.items.map(x=>({n:String(x.n||'?').slice(0,80),k:num_(x.k),p:num_(x.p),c:num_(x.c),f:num_(x.f)})));ftx=''}
- catch(e){fmsg='Hata: '+e.message+(e instanceof TypeError?' (internet?)':'')}
- fbusy=false;render()}
+const num_=v=>Math.max(0,Math.round(+v)||0),addF=(t,items)=>{(S.food[cd]=S.food[cd]||[]).push({id:Date.now(),t,items});(S.days[cd]=S.days[cd]||{}).dstale=1;save()};
 function recents(){const seen=new Set(),o=[];for(let i=0;i<21&&o.length<6;i++)FD(addD(today(),-i)).slice().reverse().forEach(e=>{if(e.t&&!seen.has(e.t)&&o.length<6){seen.add(e.t);o.push(e)}});return o}
 const fre=i=>{const e=recents()[i];if(e){addF(e.t,e.items.map(x=>({...x})));render()}};
-function recH(){const r=recents();return r.length?`<div class=card><h2>Son yediklerin · tek dokunuş</h2>${r.map((e,i)=>`<button class="btn s chip" onclick="fre(${i})">${esc(e.t.slice(0,26))}</button>`).join('')}</div>`:''}
+function qrec(i){const r=(S.rec||[])[i];if(!r||!(r.def>0))return;const w=r.def;addF(r.name+' '+w+' g',[{n:r.name+' '+w+' g',k:Math.round(r.k*w/100),p:Math.round(r.p*w/100),c:Math.round(r.c*w/100),f:Math.round(r.f*w/100)}]);toast(r.name+' '+w+' g eklendi');render()}
+function quickH(){const R=(S.rec||[]).map((r,i)=>[r,i]).filter(x=>x[0].def>0),C2=recents();if(!R.length&&!C2.length)return'';
+ return`<div class=card><h2>Tek dokunuş</h2>${R.map(([r,i])=>`<button class="btn s chip" onclick="qrec(${i})">${esc(r.name)} · ${r.def} g</button>`).join('')}${C2.map((e,i)=>`<button class="btn s chip" onclick="fre(${i})">${esc(e.t.slice(0,22))}</button>`).join('')}${(S.days[cd]||{}).dstale&&FD(cd).length?'<button class="btn s chip" onclick="fsend(true)">Puanla</button>':''}</div>`}
 function fman(){const g=i=>$('#'+i).value,k=num_(g('mk'));if(!k&&!num_(g('mp')))return;addF('',[{n:g('mn')||'Manuel',k,p:num_(g('mp')),c:num_(g('mc')),f:num_(g('mf'))}]);render()}
-function fdel(i,j){const E=S.food[cd];E[i].items.splice(j,1);if(!E[i].items.length)E.splice(i,1);save();render()}
-function foodV(){const t=ftot(cd),c=C(),E=FD(cd);
- return`<h1>FOOD</h1>${nvH()}<div class=card><div class=big>${t.k} <small class=mut>kcal${c.gk?' / '+c.gk:''}</small></div>${c.gk?bar(t.k,c.gk):''}<div class=mut style=margin-top:6px>Protein ${t.p}${c.gp?' / '+c.gp:''} g · Karb ${t.c} g · Yağ ${t.f} g</div></div>
- <div class=card><h2>Ne yedin?</h2><textarea rows=3 placeholder="ör. 2 yumurta, 1 dilim tam buğday ekmek, 1 bardak ayran" oninput="ftx=this.value">${esc(ftx)}</textarea><button class=btn onclick="fsend()" ${fbusy?'disabled':''}>${fbusy?'Hesaplanıyor…':'Ekle'}</button>${fmsg?`<div class=r style=margin-top:8px>${esc(fmsg)}</div>`:''}<div class=mut style=margin-top:8px>AI tahmini ±%20–30 sapabilir: trend için iyi, tek öğün için kesin değil. Yanlışsa ✕ ile sil, düzelterek tekrar yaz.</div></div>
- ${recH()}${E.map((e,i)=>`<div class=card>${e.t?`<div class=mut style=margin-bottom:6px>“${esc(e.t)}”</div>`:''}${e.items.map((x,j)=>`<div class=row><span>${esc(x.n)}</span><span><b>${x.k}</b> kcal <span class=mut>P${x.p} K${x.c} Y${x.f}</span> <button onclick="fdel(${i},${j})" style="background:none;border:0;color:var(--r);font-size:18px;padding:4px 8px">✕</button></span></div>`).join('')}</div>`).join('')}
- <div class=card><h2>Manuel ekle</h2><div class=grid><label>Ad<input id=mn></label><label>kcal<input id=mk type=number inputmode=numeric></label><label>Protein g<input id=mp type=number inputmode=numeric></label><label>Karb g<input id=mc type=number inputmode=numeric></label><label>Yağ g<input id=mf type=number inputmode=numeric></label></div><button class="btn s" onclick="fman()">Ekle</button></div>`}
-function pasteSteps(){navigator.clipboard.readText().then(t=>{let x=((t||'').match(/\d[\d.,]*/)||[''])[0];if(/^\d{1,3}([.,]\d{3})+$/.test(x))x=x.replace(/[.,]/g,'');const n=Math.round(parseFloat(x.replace(',','.')));if(n>=0&&n<200000){setF('steps',n);render()}else alert('Panoda adım sayısı yok')},()=>alert('Pano okunamadı'))}
+function pasteSteps(){navigator.clipboard.readText().then(t=>{let x=((t||'').match(/\d[\d.,]*/)||[''])[0];if(/^\d{1,3}([.,]\d{3})+$/.test(x))x=x.replace(/[.,]/g,'');const n=Math.round(parseFloat(x.replace(',','.')));if(n>=0&&n<200000){setF('steps',n);render()}else toast('Panoda adım sayısı yok')},()=>toast('Pano okunamadı'))}
+const md=t=>esc(t).replace(/^#+ ?/gm,'').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/^[-*] /gm,'• ').replace(/\n/g,'<br>');
 let ctxt='',cbusy=false,cmsg='';
-const CSYS=`Sen, tıp öğrencisi bir kullanıcının 104 günlük kişisel gelişim programında (spor/kilo, bateri, İngilizce, ileride TUS) yol arkadaşı koçsun. Prensipler: Consistency > perfection, Never miss twice, 1 Ocak'a kadar bırakma, gerekirse sadece dozu azalt. Türkçe, net ve direkt konuş; pohpohlama yok, suçlama yok. Sana VERİ verilir: yalnızca ona dayan, veride olmayanı uydurma, veri azsa bunu söyle. Yanıtlar kısa olsun (en fazla ~150 kelime), düz metin (markdown, başlık, madde işareti yok) ve somut: neyin iyi gittiği, en önemli tek sürtünme, EN FAZLA BİR ayarlama önerisi. Sürdürülebilirlik önceliklidir; agresif kalori kısıtlaması, aç kalma veya aşırı egzersiz önerme. Tıbbi tanı/tedavi verme; yeme davranışı veya sağlıkla ilgili endişe verici bir şey görürsen nazikçe bir uzmana danışmasını öner.`;
-function ctx(){const t=today(),c=C(),rows=[];for(let i=13;i>=0;i--){const d=addD(t,-i);if(d<S0)continue;const e=S.days[d]||{},r=calc(e),f=ftot(d);rows.push(`${d} diet:${e.diet||'-'} spor:${e.work||'-'}${r.tm?'/'+r.tm+'dk':''} bateri:${r.dr}dk(${r.d}) ingilizce:${r.tot}dk aktif${r.act}(${r.g}) core:${r.core?1:0}${e.steps?' adım:'+e.steps:''}${f.k?' kcal:'+f.k+' P:'+f.p:''}${e.note?' not:'+e.note.slice(0,60):''}`)}
+const CSYS=`Sen kullanıcının kişisel asistanı ve koçusun. Kullanıcı tıp öğrencisi; 102 günlük bir programda (spor/kilo, bateri, İngilizce, ileride TUS). Prensipleri: Consistency > perfection, Never miss twice, bırakma sadece dozu azalt.
+CEVAP KURALI: Sorduğu şeye doğrudan, doğru ve eksiksiz cevap ver (tıp/TUS, İngilizce, bateri, beslenme, plan, genel bilgi). Kısa soruya kısa, kapsamlı soruya ayrıntılı. Şablon kullanma. Türkçe, net, pohpohlamasız.
+VERİ: Sana kullanıcının güncel verisi verilir. Soru programla ilgiliyse kullan, ilgisizse hiç anma, veride olmayanı uydurma.
+UYGULAMAYI DEĞİŞTİRME: Veriyi sen yazamazsın; "actions" listesine komut koyarsan UYGULAMA onları uygular. Bir şeyi yaptığını söylemeden önce mutlaka ilgili action'ı ekle. Action eklemediysen "ekledim/kaydettim" deme. Yapamayacağın şeyi (gelecek günler için otomatik kural, bildirim, telefonun takvimine yazma) açıkça söyle.
+Kullanılabilir action'lar (date = YYYY-MM-DD):
+{"type":"set","date":"...","field":"st|fr|sp|li|bk|pr|tm|car|rpe|steps","value":sayı} - o günün alanını bu değere ayarla
+{"type":"add","date":"...","field":"aynı alanlar","value":sayı} - üstüne ekle
+{"type":"work","date":"...","value":"TRAINING|REST|MISSED"}
+{"type":"body","date":"...","w":kg,"c":bel,"fat":yağ,"mus":kas} - sadece bilinenleri koy
+{"type":"cfg","key":"rescue|target|strong|stMin|spk|tot|actN|totN|actS|totS|sess|gk|gp","value":sayı} - hedef/eşik değiştir
+{"type":"sched","t":"başlık","time":"HH:MM","days":[0-6],"date":"tek seferlikse YYYY-MM-DD"} - programa ekle (0=Pazar..6=Cumartesi)
+Alanlar: st=planlı bateri, fr=serbest bateri, sp=konuşma, li=dinleme, bk=kitap, pr=Preply, tm=antrenman dk, car=kardiyo, rpe=zorluk, steps=adım. Beslenme puanını ve diyet değerini sen ayarlayamazsın (Beslenme sekmesi hesaplar).
+ÇIKTI: SADECE şu JSON: {"reply":"kullanıcıya yazacağın metin","actions":[...]}. Action yoksa actions boş dizi. reply içinde JSON gösterme.
+Güvenlik: Kişisel tıbbi teşhis/tedavi kararı verme; agresif kalori kısıtlaması veya aç kalma önerme; endişe verici durumda uzmana yönlendir.`;
+const AFLD={st:'planlı bateri',fr:'serbest bateri',sp:'konuşma',li:'dinleme',bk:'kitap',pr:'Preply',tm:'antrenman',car:'kardiyo',rpe:'zorluk',steps:'adım'};
+const inR=d=>/^\d{4}-\d\d-\d\d$/.test(d||'')&&d>=S0&&d<=ENDD;
+function applyA(list){const done=[],rej=[];applyA.rej=rej;for(const a of(Array.isArray(list)?list:[]).slice(0,12)){try{
+ const d=a.date||today(),ok=inR(d),out=()=>rej.push(`${d}: tarih program dışında (${S0} – ${ENDD})`);
+ if(a.type=='set'||a.type=='add'){if(!AFLD[a.field])rej.push('bilinmeyen alan: '+a.field);else if(!ok)out();else{const e=S.days[d]=S.days[d]||{},v=Math.max(0,Math.round(+a.value||0)),nv=a.type=='add'?(+e[a.field]||0)+v:v;if(nv)e[a.field]=nv;else delete e[a.field];done.push(`${d} · ${AFLD[a.field]} = ${nv}`)}}
+ else if(a.type=='work'){if(!ok)out();else if(!['TRAINING','REST','MISSED'].includes(a.value))rej.push('geçersiz spor değeri');else{(S.days[d]=S.days[d]||{}).work=a.value;done.push(`${d} · spor = ${a.value}`)}}
+ else if(a.type=='body'){if(!ok)out();else{const o=S.body[d]=S.body[d]||{},pp=[];['w','c','fat','mus'].forEach(k=>{if(+a[k]>0){o[k]=String(+a[k]);pp.push(k+' '+a[k])}});if(pp.length)done.push(`${d} · ölçüm ${pp.join(', ')}`);else rej.push('ölçüm değeri yok')}}
+ else if(a.type=='cfg'){if(!RF.some(f=>f[0]==a.key)||!(+a.value>=0))rej.push('geçersiz ayar: '+a.key);else{S.cfg[a.key]=Math.round(+a.value);done.push(`ayar · ${RF.find(f=>f[0]==a.key)[1]} = ${S.cfg[a.key]}`)}}
+ else if(a.type=='sched'){const dts=inR(a.date)?a.date:'',dys=(Array.isArray(a.days)?a.days:[]).map(Number).filter(n=>n>=0&&n<=6);
+  if(!String(a.t||'').trim())rej.push('program başlığı yok');else if(!dts&&!dys.length)rej.push('program günü anlaşılmadı');else{S.sched=(S.sched||[]).concat({id:Date.now()+Math.floor(Math.random()*1e3),t:String(a.t).slice(0,60),time:hm(String(a.time||'')),days:dts?[]:dys,date:dts,note:'',done:[],skip:[]});done.push('programa eklendi · '+a.t)}}
+ else rej.push('bilinmeyen işlem: '+a.type)
+ }catch(e){rej.push('işlem okunamadı')}}
+ if(done.length)save();return done}
+function ctx(n=14){const t=today(),c=C(),rows=[];for(let i=n-1;i>=0;i--){const d=addD(t,-i);if(d<S0)continue;const e=S.days[d]||{},r=calc(e),f=ftot(d);rows.push(`${d} diet:${e.diet||'-'}${e.dscore?'('+e.dscore+'/10)':''} spor:${e.work||'-'}${r.tm?'/'+r.tm+'dk':''} bateri:${r.dr}dk(${r.d}) ingilizce:${r.tot}dk aktif${r.act}(${r.g}) core:${r.core?1:0}${e.steps?' adım:'+e.steps:''}${f.k?' kcal:'+f.k+' P:'+f.p:''}${e.note?' not:'+e.note.slice(0,60):''}`)}
  const W=allW().filter(x=>x.s<=t&&x.score!=null).map(x=>`W${x.i+1}:${x.score}(diet ${Math.round(x.dp*100)} spor ${Math.round(x.sp*100)} bateri ${Math.round(x.dq*100)} ing ${Math.round(x.eq*100)})`),B=Object.entries(S.body).sort().map(([d,v])=>`${d} ${v.w||'-'}kg bel${v.c||'-'} yağ${v.fat||'-'}%`),T=totals(),k=streaks();
- return`Program 20 Eylül 2026–1 Ocak 2027; bugün ${t}, gün ${dayN(t)}/104. Hedefler: haftada ${c.sess} spor, bateri ${c.target}dk/gün (rescue ${c.rescue}), İngilizce ${c.totN}dk/gün (minimum ${c.tot}); kcal hedefi ${c.gk||'yok'}, protein ${c.gp||'yok'}.\nSon günler:\n${rows.join('\n')}\nHaftalık skorlar: ${W.join(' ')||'yok'}\nVücut: ${B.join('; ')||'yok'}\nNo-zero streak ${k.nz}, adherence %${T.adh}, XP ${T.xp}, bateri ${h(T.dr)} sa, İngilizce ${h(T.tot)} sa.`}
-async function csend(q){q=(q||ctxt).trim();if(!q||cbusy)return;const ai=AI();if(!ai.key){cmsg='API anahtarı yok (More → Settings).';return render()}
- S.chat=S.chat||[];S.chat.push({r:'u',t:q});ctxt='';cbusy=true;cmsg='';save();render();scrollTo(0,document.body.scrollHeight);
- try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':ai.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:ai.cmodel||'claude-sonnet-5',max_tokens:900,system:CSYS+'\n\nVERİ:\n'+ctx(),messages:S.chat.slice(-11).map(m=>({role:m.r=='u'?'user':'assistant',content:m.t}))})});
-  const j=await r.json();if(!r.ok)throw new Error((j.error&&j.error.message)||('HTTP '+r.status));const a=j.content.map(x=>x.text||'').join('').trim();if(!a)throw new Error('Boş yanıt');
-  S.chat.push({r:'a',t:a});if(S.chat.length>40)S.chat=S.chat.slice(-40);save()}
- catch(e){S.chat.pop();ctxt=q;save();cmsg='Hata: '+e.message+(e instanceof TypeError?' (internet?)':'')}
+ return`Program ${S0} – ${ENDD} (${N} gün); bugün ${t}, ${dayN(t)<1?'program henüz başlamadı':'gün '+dayN(t)+'/'+N}. Hedefler: haftada ${c.sess} spor, bateri ${c.target}dk/gün (rescue ${c.rescue}), İngilizce ${c.totN}dk/gün (minimum ${c.tot}); kcal hedefi ${c.gk||'yok'}, protein ${c.gp||'yok'}.\nSon günler:\n${rows.join('\n')}\nBugünkü program: ${pDay(t).map(p=>(p.time?p.time+' ':'')+p.t+(pDone(p,t)?' ✓':'')).join('; ')||'yok'}\nHaftalık skorlar: ${W.join(' ')||'yok'}\nVücut: ${B.join('; ')||'yok'}\nNo-zero streak ${k.nz}, adherence %${T.adh}, XP ${T.xp}, bateri ${h(T.dr)} sa, İngilizce ${h(T.tot)} sa.`}
+const cq=['Bu haftayı değerlendir','Bugün için minimum plan öner','Bugüne 50 dk Preply ekle'];
+function coachV(){const M=S.chat||[];return`<h1>Koç</h1><div class=card><div class=mut>Ne istersen sor. Verilerini görür; süre, ölçüm, hedef ve program kaydını senin adına girebilir. Yaptığı değişiklik mesajın altında listelenir.</div>${cq.map((x,i)=>`<button class="btn s chip" onclick="csend(cq[${i}])">${x}</button>`).join('')}</div>
+ ${M.map((m,i)=>`<div class="mb ${m.r=='u'?'mu':'ma'}">${md(m.t)}</div>${m.warn?'<div class=r style="font-size:13px;margin:-2px 0 12px">Bu yanıt kayıt yapmadı: uygulamaya hiçbir şey yazılmadı.</div>':''}${(m.did&&m.did.length)||(m.rej&&m.rej.length)?`<div class=card style="margin:6px 0 14px">${m.did&&m.did.length?`<div class=mut>Uygulandı</div>${m.did.map(x=>`<div class=row style="margin:6px 0"><span>${esc(x)}</span><span class=g>✓</span></div>`).join('')}`:''}${m.rej&&m.rej.length?`<div class=mut style=margin-top:6px>Uygulanamadı</div>${m.rej.map(x=>`<div class=row style="margin:6px 0"><span>${esc(x)}</span><span class=r>✕</span></div>`).join('')}`:''}${i==M.length-1&&undoSnap&&m.did&&m.did.length?'<button class="btn s" onclick="undoA()">Geri al</button>':''}</div>`:''}`).join('')}${cbusy?'<div class="mb ma mut">Düşünüyor…</div>':''}
+ <div class=card style=margin-top:12px>${cmsg?`<div class=r style=margin-bottom:8px>${esc(cmsg)}</div>`:''}<textarea rows=2 placeholder="Koç'a yaz…" oninput="ctxt=this.value">${esc(ctxt)}</textarea><button class=btn onclick="csend()" ${cbusy?'disabled':''}>Gönder</button>${M.length?`<button class="btn s" onclick="S.chat=[];save();render()">Sohbeti temizle</button>`:''}</div>`}
+
+const AMODEL={quick:'claude-haiku-4-5-20251001',default:'claude-sonnet-5'};
+const blobB64=b=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=()=>rej(new Error('Fotoğraf okunamadı'));r.readAsDataURL(b)});
+async function msgsImg(o){if(!o.images||!o.images.length)return o.msgs;const m=o.msgs.map(x=>({...x})),L=m[m.length-1],bl=[];for(const b of o.images)bl.push({type:'image',source:{type:'base64',media_type:['image/jpeg','image/png','image/webp','image/gif'].includes(b.type)?b.type:'image/jpeg',data:await blobB64(b)}});L.content=[...bl,{type:'text',text:L.content}];return m}
+const emp=(w,x)=>new Error('Boş yanıt ('+w+': '+String(JSON.stringify(x)).slice(0,120)+')');
+async function viaKeyless(o){const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:o.system,messages:await msgsImg(o)})});
+ const raw=await r.text();let j;try{j=JSON.parse(raw)}catch(e){throw new Error('API yanıtı okunamadı (HTTP '+r.status+'): '+raw.slice(0,70))}if(!r.ok)throw new Error((j.error&&j.error.message)||('HTTP '+r.status));const t=(j.content||[]).map(x=>x.text||'').join('');if(!t.trim())throw emp('api',j);return outp(o,t)}
+async function viaComplete(o){const p=o.system+'\n\n'+o.msgs.map(m=>(m.role=='user'?'Kullanıcı: ':'Asistan: ')+m.content).join('\n\n')+'\n\nAsistan:',r=await window.claude.complete(p),t=typeof r=='string'?r:(r&&(r.completion||r.text||(r.content&&r.content[0]&&r.content[0].text)))||'';if(!String(t).trim())throw emp('complete',r);return outp(o,t)}
+const outp=(o,t)=>{t=String(t).trim();return o.json?JSON.parse(t.replace(/```json|```/g,'').trim()):t};
+const flat=o=>o.system+'\n\n'+o.msgs.map(m=>(m.role=='user'?'KULLANICI: ':'ASİSTAN: ')+m.content).join('\n\n')+'\n\nASİSTAN:';
+const pick=r=>{if(r==null)return'';if(typeof r=='string')return r;if(typeof r.text=='string')return r.text;if(typeof r.completion=='string')return r.completion;
+ if(Array.isArray(r.content))return r.content.map(x=>typeof x=='string'?x:(x&&x.text)||'').join('');
+ if(typeof r.output_text=='string')return r.output_text;if(r.message&&typeof r.message.content=='string')return r.message.content;return''};
+async function viaSample(sm,o,tier){let acc='';const opt={modelTier:tier,cache:false,onText:x=>{if(x&&typeof x.text=='string')acc=x.text}};
+ if(o.images){const L=await(sm.limits?sm.limits():Promise.resolve(null)).catch(()=>null);if(!L||!L.images)throw Object.assign(new Error('bu görünüm fotoğraf gönderemiyor'),{code:'images_unavailable'});opt.images=o.images}
+ if(o.json){const j=await sm.json(flat(o),opt);if(j&&typeof j=='object')return j;throw emp('sample.json',j)}
+ const r=await sm(flat(o),opt),t=pick(r)||acc;if(String(t).trim())return String(t).trim();throw emp('sample',r)}
+async function aiAsk(o){const tier=o.tier||'default',W=window.claude,E=[];
+ if(W&&typeof W.use==='function'){let sm=null;try{sm=await W.use('sample')}catch(e){E.push(e)}
+  if(sm){for(const tr of(tier=='quick'?['quick','default']:['default','quick'])){try{return await viaSample(sm,o,tr)}catch(e){E.push(e);if(e&&/not_granted|rate_limited|cancelled/.test(e.code||e.message||''))break}}}}
+ if(W){try{return await viaKeyless(o)}catch(e){E.push(e)}
+  if(typeof W.complete==='function'&&!o.images){try{return await viaComplete(o)}catch(e){E.push(e)}}}
+ const ai=AI();if(ai.key){const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':ai.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:(tier=='quick'?ai.model:ai.cmodel)||AMODEL[tier],max_tokens:tier=='quick'?1200:2000,system:o.system,messages:await msgsImg(o)})});
+  const j=await r.json();if(!r.ok)throw new Error((j.error&&j.error.message)||('HTTP '+r.status));const t=pick(j);if(!t.trim())throw emp('key',j);return outp(o,t)}
+ if(!E.length)throw new Error('NOAI');const seen=[],msgs=E.map(e=>(e&&(e.code?e.code+': ':'')+(e.message||String(e)))||'?').filter(m=>!seen.includes(m)&&seen.push(m));
+ throw new Error(msgs.join(' | ').slice(0,300))}
+const aiErr=e=>e.message=='NOAI'?'AI bağlı değil. Claude içinde açtığın sürümde otomatik çalışır; kendi hostunda More → Settings → API anahtarı gerekir.':'Hata: '+e.message+(e instanceof TypeError?' (internet?)':'');
+async function aiTest(){const el=$('#aitest');el.textContent='Deneniyor…';const out=[],W=window.claude;
+ out.push('Ortam: '+(W?(typeof W.use=='function'?'claude.use var':'düz claude')+(typeof W.complete=='function'?' + complete':''):'claude yok')+(AI().key?' + API anahtarı':''));
+ if(W&&typeof W.use=='function'){try{const sm=await W.use('sample');out.push('sample: '+(sm?'hazır':'yok (null)'));
+  if(sm){try{const r=await sm('Sadece OK yaz.',{modelTier:'quick',cache:false});out.push('yanıt: '+JSON.stringify(r).slice(0,160))}catch(e){out.push('yanıt hatası: '+((e&&e.code?e.code+' — ':'')+(e&&e.message||e)))}}}catch(e){out.push('sample hatası: '+(e&&e.message||e))}}
+ for(const t of['quick','default']){const n=t=='quick'?'Yemek':'Koç';try{const r=await aiAsk({tier:t,system:'Kısa cevap ver.',msgs:[{role:'user',content:'Sadece tamam yaz.'}]});out.push('✓ '+n+': '+String(r).slice(0,40))}catch(e){out.push('✗ '+n+': '+aiErr(e))}}
+ if(W){try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:20,messages:[{role:'user',content:'Sadece OK yaz.'}]})}),raw=await r.text();out.push('anahtarsız istek: HTTP '+r.status+' '+raw.replace(/\s+/g,' ').slice(0,90))}catch(e){out.push('anahtarsız istek hata: '+(e&&e.name)+' '+(e&&e.message))}
+  if(typeof W.complete=='function'){try{const r=await W.complete('Sadece OK yaz.');out.push('complete: '+JSON.stringify(r).slice(0,100))}catch(e){out.push('complete hata: '+(e&&e.message||e))}}}
+ try{const r=await coachCall(false);out.push('✓ Uzun koç isteği ('+(CSYS.length+ctx().length)+' karakter): '+String(r).slice(0,50).replace(/\n/g,' '))}catch(e){out.push('✗ Uzun koç isteği: '+aiErr(e))}
+ el.textContent=out.join('\n')}
+const FSYS=`Sen bir beslenme analizi ve puanlama asistanısın. Kullanıcı ne yediğini Türkçe serbest metinle yazar. Yapacakların:
+1) YENİ METİN varsa her yiyecek için (porsiyon belirtilmemişse tipik porsiyon varsayarak) kcal, protein, karbonhidrat, yağ (g) tahmin et (items).
+2) Günün TAMAMINI (önceki kayıtlar + yeni metin) kullanıcının diyet planına göre 1-10 puanla (score) ve tek cümle, somut, suçlamayan bir gerekçe yaz (reason, Türkçe).
+Puan anlamı: 8-10 = plana büyük ölçüde uyum (İYİ); 5-7 = kontrollü, sınırlı sapma (ORTA); 1-4 = belirgin plan dışı/kontrolsüz aşım (KÖTÜ). Plan verilmemişse dengeli, kilo vermeye uygun beslenmeyi ölçüt al ve bunu gerekçede belirt. Gün henüz bitmemiş olabilir: kayıtlı olmayan öğünler için ceza verme, yalnızca kayıtlı olana göre değerlendir. Aşırı düşük alım (çok az yemek/çok düşük kalori) yüksek puan almaz, gerekçede belirt.
+Kayıtlı tarifler verilmişse ve metinde adı geçiyorsa değerleri yalnızca o tabloya (100 g başına) dayanarak gramajla orantılayıp hesapla, tahmin etme.
+SADECE şu JSON'u döndür: {"items":[{"n":"ad + porsiyon","k":kcal,"p":g,"c":g,"f":g}],"score":1-10 tam sayı,"reason":"..."}. Yeni metin yoksa items boş dizi olsun. Sayılar tam sayı.`;
+const dmap=x=>x>=8?'İYİ':x>=5?'ORTA':'KÖTÜ',DC={'İYİ':'g',ORTA:'y','KÖTÜ':'r'};
+const tl=x=>x.toLocaleLowerCase('tr'),rxe=x=>x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+function rmatch(txt){let low=tl(txt);const items=[],frag=[],L='a-zçğıöşü',G='(\\d+(?:[.,]\\d+)?)\\s*(?:gram|gr|g)(?![a-zçğıöşü])';
+ for(const r of S.rec||[]){const nm=rxe(tl(r.name));const RE=[new RegExp(G+'\\s*(?:kadar\\s+)?'+nm+'['+L+']*','g'),new RegExp(nm+'['+L+']*\\s*[:(]?\\s*'+G+'\\s*\\)?','g')];if(r.def>0)RE.push(new RegExp('(?:^|[\\s,;+])'+nm+'['+L+']*(?![\\s,;:()]*'+G+')','g'));
+  for(const re of RE)low=low.replace(re,(m,g)=>{const w=typeof g==='string'&&g?parseFloat(g.replace(',','.')):r.def;if(!(w>0))return m;items.push({n:r.name+' '+w+' g',k:Math.round(r.k*w/100),p:Math.round(r.p*w/100),c:Math.round(r.c*w/100),f:Math.round(r.f*w/100)});frag.push(m.trim());return' '})}
+ const rest=low.replace(/\s+/g,' ').trim().replace(/^(?:(?:ve|ile)\s+|[\s,;:+)(])+/,'').replace(/(?:\s(?:ve|ile)|[\s,;:+)(])+$/,'').trim().replace(/^(?:ve|ile)$/,'');return{items,frag:frag.join(', '),rest:items.length?rest:txt}}
+async function fsend(re){const txt0=re===true?'':ftx.trim();if(fbusy||(!txt0&&!(re===true&&FD(cd).length)))return;fbusy=true;fmsg='';render();let rm={items:[],frag:'',rest:txt0};
+ try{rm=rmatch(txt0);const txt=rm.rest;if(rm.items.length)addF(rm.frag,rm.items);
+  const prev=FD(cd).flatMap(e=>e.items.map(x=>x.n+' '+x.k+'kcal P'+x.p)).join('; ')||'(yok)',c=C(),tab=(S.rec||[]).map(r=>`${r.name}: ${r.k} kcal P${r.p} K${r.c} Y${r.f}`).join('; ');
+  const o=await aiAsk({tier:'quick',json:1,system:FSYS,msgs:[{role:'user',content:`DİYET PLANI: ${S.plan||'(verilmedi)'}\nKALORİ HEDEFİ: ${c.gk||'yok'}; PROTEİN HEDEFİ: ${c.gp||'yok'}\nGÜNÜN ÖNCEKİ KAYITLARI: ${prev}\nKAYITLI TARİFLER (100 g başına): ${tab||'(yok)'}\nYENİ METİN: ${txt||'(yok, sadece yeniden puanla)'}`}]});
+  if(txt){if(!Array.isArray(o.items)||!o.items.length)throw new Error('Yemek çıkarılamadı');addF(txt,o.items.map(x=>({n:String(x.n||'?').slice(0,80),k:num_(x.k),p:num_(x.p),c:num_(x.c),f:num_(x.f)})))}
+  ftx='';const sc=Math.round(+o.score);if(!(sc>=1&&sc<=10))throw new Error('Puan alınamadı');const e=S.days[cd]=S.days[cd]||{};e.dscore=sc;e.dreason=String(o.reason||'').slice(0,240);delete e.dstale;if(!e.dman)e.diet=dmap(sc);save()}
+ catch(e){fmsg=aiErr(e);if(rm.items.length)ftx=rm.rest}
+ fbusy=false;render()}
+const RSYS=`Sen bir beslenme hesaplama asistanısın. Kullanıcı kendi tarifini (malzemeler, gramajlar, yapılışı) yazar. Tarifin TOPLAM besin değerini tahmin et: yağ, marine ve sos dahil kullanılan malzemelerin tamamı. SADECE JSON döndür: {"k":toplam kcal,"p":protein g,"c":karbonhidrat g,"f":yağ g,"g":verilen malzemelerin toplam ağırlığı (g),"note":"varsayımların, tek cümle"}. Gramajı verilmeyen malzemeler için makul tahmin yap ve note'ta belirt. Sayılar tam sayı.`;
+let rf={n:'',t:'',w:'',d:''},rbusy=false,rmsg='',ropen=false;
+async function rsave(){const n=rf.n.trim(),t=rf.t.trim();if(!n||!t){rmsg='Ad ve tarif gerekli.';return render()}rbusy=true;rmsg='';render();
+ try{const o=await aiAsk({tier:'quick',json:1,system:RSYS,msgs:[{role:'user',content:'Tarif adı: '+n+'\n'+t}]});const w=+rf.w>0?+rf.w:+o.g;if(!(w>0)||!(+o.k>0))throw new Error('Hesaplanamadı');
+  const f1=v=>+((+v||0)*100/w).toFixed(1);S.rec=(S.rec||[]).filter(x=>tl(x.name)!=tl(n));S.rec.push({id:Date.now(),name:n,text:t,w:+rf.w||0,def:+rf.d||0,k:Math.round(o.k*100/w),p:f1(o.p),c:f1(o.c),f:f1(o.f),note:String(o.note||'').slice(0,200)});save();rf={n:'',t:'',w:'',d:''}}
+ catch(e){rmsg=aiErr(e)}
+ rbusy=false;render()}
+const rdel=i=>{S.rec.splice(i,1);save();render()},rset=(i,k,v)=>{S.rec[i][k]=+v||0;save()},redit=i=>{const r=S.rec[i];rf={n:r.name,t:r.text,w:r.w?String(r.w):'',d:r.def?String(r.def):''};ropen=true;render()};
+function recV(){const R=S.rec||[];return`<div>
+ ${R.map((r,i)=>`<div style="border-bottom:1px solid var(--c2);padding:8px 0"><div class=row style=margin:0><b>${esc(r.name)}</b><span><button class=x style=color:var(--m) onclick="redit(${i})">✎</button><button class=x onclick="rdel(${i})">✕</button></span></div><div class=mut>100 g başına (düzeltebilirsin)</div><div class=grid style="grid-template-columns:repeat(4,1fr);gap:6px">${[['k','kcal'],['p','P'],['c','K'],['f','Y']].map(([k,l])=>`<label>${l}<input type=number inputmode=decimal value="${r[k]}" onchange="rset(${i},'${k}',this.value)"></label>`).join('')}</div>${r.note?`<div class=mut style=margin-top:4px>${esc(r.note)}</div>`:''}</div>`).join('')}
+ <h2 style=margin-top:14px>Yeni tarif</h2><label>Ad<input value="${esc(rf.n)}" oninput="rf.n=this.value" placeholder="ör. Tavuk marine"></label><label style=margin-top:8px>Tarif (malzeme + gram)<textarea rows=4 oninput="rf.t=this.value" placeholder="ör. 1000 g tavuk göğsü, 30 g zeytinyağı, 150 g yoğurt, baharatlar. Fırında pişirdim.">${esc(rf.t)}</textarea></label><div class=grid style=margin-top:8px><label>Pişmiş toplam ağırlık g<input type=number inputmode=numeric value="${esc(rf.w)}" oninput="rf.w=this.value"></label><label>Her zamanki porsiyonum g<input type=number inputmode=numeric placeholder="ör. 200" value="${esc(rf.d)}" oninput="rf.d=this.value"></label></div>
+ <button class=btn onclick="rsave()" ${rbusy?'disabled':''}>${rbusy?'Hesaplanıyor…':'Hesapla ve kaydet'}</button>${rmsg?`<div class=r style=margin-top:8px>${esc(rmsg)}</div>`:''}
+ <div class=mut style=margin-top:8px>Porsiyon yazarsan (“200 g ${R[0]?esc(tl(R[0].name)):'tavuk marine'}”) o gramla, sadece adını yazarsan her zamanki porsiyonunla hesaplar. Porsiyonu olan tarifler yukarıda tek dokunuş olarak da çıkar. Pişince tartıp yazarsan daha doğru olur (yemek pişince su kaybeder, yazmazsan çiğ malzeme toplamı esas alınır).</div></div>`}
+const LSYS=`Bu, bir gıda ürününün besin değerleri etiketinin fotoğrafı. Etikette YAZANI aynen oku; tahmin etme, uydurma. Okunamayan değer için null yaz. SADECE JSON: {"name":"ürün adı (görünüyorsa, yoksa boş)","per100":{"k":kcal,"p":protein g,"c":karbonhidrat g,"f":yağ g} veya null,"serving":{"g":porsiyon gramı,"k":kcal,"p":protein,"c":karbonhidrat,"f":yağ} veya null,"note":"emin olmadığın şey, tek cümle veya boş"}. 100 g (ya da 100 ml) başına sütun varsa per100'e, porsiyon başına sütun varsa serving'e yaz. Enerji kcal olmalı; yalnız kJ varsa 4.184'e böl.`;
+let lab=null;
+async function imgPrep(f){
+ const draw=(src,w,h)=>{const sc=Math.min(1,1400/Math.max(w,h)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(w*sc));c.height=Math.max(1,Math.round(h*sc));c.getContext('2d').drawImage(src,0,0,c.width,c.height);return new Promise((res,rej)=>c.toBlob(b=>b?res(b):rej(new Error('toBlob')),'image/jpeg',.85))};
+ try{if(window.createImageBitmap){const bm=await createImageBitmap(f),b=await draw(bm,bm.width,bm.height);if(bm.close)bm.close();return b}}catch(e){}
+ for(const mk of[()=>URL.createObjectURL(f),async()=>'data:'+(f.type||'image/jpeg')+';base64,'+await blobB64(f)]){try{const u=await mk(),im=await new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=()=>rej(new Error('img'));i.src=u});return await draw(im,im.naturalWidth||im.width,im.naturalHeight||im.height)}catch(e){}}
+ if(/^image\/(jpeg|png|webp|gif)$/.test(f.type)&&f.size<=8e6)return f;
+ throw new Error('Fotoğraf açılamadı (bu ortam görüntüyü işleyemedi). Galeriden JPEG veya PNG bir fotoğraf seçmeyi dene.')}
+const n1=v=>Math.round((+v||0)*10)/10;
+async function labScan(f){lab={busy:1};render();
+ try{const blob=await imgPrep(f),o=await aiAsk({tier:'default',json:1,system:LSYS,images:[blob],msgs:[{role:'user',content:'Etiketi oku.'}]}),sv_=o&&o.serving,pr=o&&o.per100;
+  let per=pr&&+pr.k>=0&&(pr.k!==null)?pr:null,sg=sv_&&+sv_.g>0?Math.round(+sv_.g):0;
+  if(!per&&sg&&sv_.k!=null)per={k:sv_.k*100/sg,p:(sv_.p||0)*100/sg,c:(sv_.c||0)*100/sg,f:(sv_.f||0)*100/sg};
+  if(!per)throw new Error('Etikette 100 g veya porsiyon başına değer okunamadı. Fotoğrafı daha yakın ve net çek.');
+  lab={n:String(o.name||'').slice(0,60),k:Math.round(+per.k||0),p:n1(per.p),c:n1(per.c),f:n1(per.f),g:sg||100,note:String(o.note||'').slice(0,160),fromServ:!(pr&&+pr.k>=0&&pr.k!==null)}}
+ catch(e){lab={err:aiErr(e)+' Fotoğraf okuma her ortamda çalışmaz; yayınlanmış “1 Ocak Misyonu” kartından dene ya da değerleri elle gir (Tarifler · manuel ekle).'}}
+ render()}
+const labPick=i=>{const f=i.files&&i.files[0];i.value='';if(f)labScan(f)},labSet=(k,v)=>{lab[k]=(k=='n')?v:+v||0;const g=lab.g,m=$('#labtot');if(m)m.textContent=labTot()};
+const labTot=()=>{const w=+lab.g||0;return Math.round(lab.k*w/100)+' kcal · P '+Math.round(lab.p*w/100)+' · K '+Math.round(lab.c*w/100)+' · Y '+Math.round(lab.f*w/100)};
+function labAdd(keep){const w=+lab.g;if(!(w>0))return toast('Kaç gram yediğini yaz');const name=(lab.n||'Etiketli ürün').trim(),it={n:name+' '+w+' g',k:Math.round(lab.k*w/100),p:Math.round(lab.p*w/100),c:Math.round(lab.c*w/100),f:Math.round(lab.f*w/100)};
+ addF(name+' '+w+' g',[it]);if(keep){S.rec=(S.rec||[]).filter(x=>tl(x.name)!=tl(name));S.rec.push({id:Date.now(),name,text:'Etiketten okundu',w:0,def:w,k:lab.k,p:lab.p,c:lab.c,f:lab.f,note:'Etiket fotoğrafından'})}
+ lab=null;save();render();fsend(true)}
+function labH(){const inp='<label class="btn s" style="display:block;text-align:center;margin-top:0">Etiket fotoğrafından ekle<input type=file accept="image/*" hidden onchange="labPick(this)"></label>';
+ if(!lab)return`<div class=card style="padding:12px">${inp}</div>`;
+ if(lab.busy)return'<div class=card><div class=mut>Etiket okunuyor…</div></div>';
+ if(lab.err)return`<div class=card><div class=r>${esc(lab.err)}</div>${inp}</div>`;
+ const f=(k,l)=>`<label>${l}<input type=number inputmode=decimal value="${lab[k]}" oninput="labSet('${k}',this.value)"></label>`;
+ return`<div class=card><h2>Etiketten okunan · 100 g başına</h2><label>Ürün adı<input value="${esc(lab.n)}" oninput="labSet('n',this.value)" placeholder="ör. Protein bar"></label>
+ <div class=grid style="grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px">${f('k','kcal')}${f('p','P')}${f('c','K')}${f('f','Y')}</div>
+ ${lab.fromServ?'<div class=mut style=margin-top:6px>Etikette porsiyon başına değer vardı, 100 g’a çevrildi.</div>':''}${lab.note?`<div class=mut style=margin-top:6px>${esc(lab.note)}</div>`:''}
+ <div class=mut style=margin-top:8px>Okunan değerleri paketle karşılaştır, yanlışsa düzelt.</div>
+ <label style=margin-top:10px>Kaç gram yedin?<input type=number inputmode=numeric value="${lab.g}" oninput="labSet('g',this.value)"></label><div class=mut id=labtot style=margin-top:6px>${labTot()}</div>
+ <button class=btn onclick="labAdd(false)">Ekle</button><button class="btn s" onclick="labAdd(true)">Ürün olarak kaydet ve ekle</button><button class="btn s" onclick="lab=null;render()">Vazgeç</button></div>`}
+const dset=v=>{const e=S.days[cd]=S.days[cd]||{};e.diet=v;e.dman=1;save();render()},dauto=()=>{const e=S.days[cd]||{};delete e.dman;if(e.dscore)e.diet=dmap(e.dscore);else delete e.diet;save();render()};
+function fdel(i,j){const E=S.food[cd];E[i].items.splice(j,1);if(!E[i].items.length)E.splice(i,1);const e=S.days[cd]=S.days[cd]||{};if(!E.length){delete e.dscore;delete e.dreason;delete e.dstale;if(!e.dman)delete e.diet}else e.dstale=1;save();render()}
+function scoreH(){const e=S.days[cd]||{},cl=DC[e.diet]||'';
+ return`<div class=card><div class=row style=margin:0><div>${e.dscore?`<div class=big2><span class="${cl}">${e.dscore}</span><small> / 10 · ${e.diet}</small></div>`:'<div class=mut>Henüz puan yok</div>'}</div><div style=text-align:right><div class=num style="font-size:22px;font-weight:500">${ftot(cd).k}<small class=mut style="font-size:13px;font-weight:400"> kcal${C().gk?' / '+C().gk:''}</small></div><div class=mut style=font-size:12.5px>P ${ftot(cd).p} · K ${ftot(cd).c} · Y ${ftot(cd).f}</div></div></div>${C().gk?bar(ftot(cd).k,C().gk):''}
+ <div class=mut style=margin-top:8px>${e.dreason?esc(e.dreason):'Ne yediğini yaz, planına göre puanlansın.'}</div>${e.dstale&&FD(cd).length?'<button class="btn s chip" onclick="fsend(true)">Puan güncel değil · Yeniden puanla</button>':''}
+ <details style=margin-top:12px><summary>Puanı elle değiştir</summary><div class=seg style=margin-top:8px>${['İYİ','ORTA','KÖTÜ'].map(v=>`<button class="${e.diet===v&&e.dman?'on '+DC[v]:''}" onclick="dset('${v}')">${v}</button>`).join('')}</div>${e.dman?'<button class="btn s chip" onclick="dauto()">AI’ya bırak</button>':''}</details></div>`}
+function foodV(){const t=ftot(cd),c=C(),E=FD(cd);
+ return`<h1>Beslenme</h1>${nvH()}${scoreH()}
+ <div class=card><textarea rows=2 placeholder="Ne yedin? Örn: 2 yumurta, 1 dilim ekmek, ayran" oninput="ftx=this.value">${esc(ftx)}</textarea><button class=btn onclick="fsend()" ${fbusy?'disabled':''}>${fbusy?'Analiz ediyor…':'Ekle ve puanla'}</button>${fmsg?`<div class=r style=margin-top:8px>${esc(fmsg)}</div>`:''}${S.plan?'':'<div class=mut style=margin-top:8px>Diyet planını Ayarlar’a yazarsan puan ona göre olur. Kalori tahmini ±%20–30 sapabilir.</div>'}</div>
+ ${labH()}${quickH()}${!E.length?'<div class=card><div class=mut>Bugün için kayıt yok. Yukarıya ne yediğini yaz ya da tek dokunuşla ekle.</div></div>':''}${E.map((e,i)=>`<div class=card>${e.t?`<div class=mut style=margin-bottom:6px>“${esc(e.t)}”</div>`:''}${e.items.map((x,j)=>`<div class=row><span>${esc(x.n)}</span><span><b>${x.k}</b> kcal <span class=mut>P${x.p} K${x.c} Y${x.f}</span> <button onclick="fdel(${i},${j})" style="background:none;border:0;color:var(--r);font-size:18px;padding:4px 8px">✕</button></span></div>`).join('')}</div>`).join('')}
+ <details class=card ${ropen?'open':''} ontoggle="ropen=this.open"><summary>Tarifler · manuel ekle</summary><div style=margin-top:10px>${recV()}<div style=margin-top:16px><h2>Manuel</h2><div class=grid><label>Ad<input id=mn></label><label>kcal<input id=mk type=number inputmode=numeric></label><label>Protein g<input id=mp type=number inputmode=numeric></label><label>Karb g<input id=mc type=number inputmode=numeric></label><label>Yağ g<input id=mf type=number inputmode=numeric></label></div><button class="btn s" onclick="fman()">Ekle</button></div></div></details>`}
+let undoSnap=null;
+function undoA(){if(!undoSnap)return;S=Object.assign(DEF(),JSON.parse(undoSnap));undoSnap=null;save();toast('Geri alındı');render()}
+const FM=[[/preply/,'pr'],[/serbest|şarkı|sarki|free/,'fr'],[/bateri|davul|planlı|structured/,'st'],[/konuşma|konusma|speaking/,'sp'],[/dinleme|listening/,'li'],[/kitap|okuma|book/,'bk'],[/kardiyo|cardio/,'car'],[/antrenman|idman|spor|workout/,'tm']];
+function localCmd(q){const t=tl(q).trim();if(t.length>90||/\?|\b(mi|mı|mu|mü|neden|nasıl|ne kadar)\b/.test(t))return null;
+ const m=t.match(/(\d+(?:[.,]\d+)?)\s*(?:dk|dakika|dak)\b/),f=FM.find(x=>x[0].test(t)),v=t.match(/\b(ekle\w*|yaz\w*|gir\w*|yaptım|yaptim|çalıştım|calistim|oldu|kaydet\w*|işle\w*|ayarla\w*)\b/);
+ if(!m||!f||!v)return null;const val=Math.round(parseFloat(m[1].replace(',','.'))),d=/\bdün|\bdun/.test(t)?addD(today(),-1):today(),ty=/^ekle/.test(v[1])?'add':'set',acts=[{type:ty,date:d,field:f[1],value:val}];
+ if(f[1]=='tm')acts.push({type:'work',date:d,value:'TRAINING'});return acts}
+const hist=n=>{let C=S.chat||[],k=-1;C.forEach((m,i)=>{if(m.r=='a'&&!m.did)k=i});C=C.slice(k+1);let H=C.slice(-n);while(H.length&&H[0].r!='u')H.shift();return H.map(m=>({role:m.r=='u'?'user':'assistant',content:String(m.t).slice(0,1500)}))};
+function parseCoach(t){t=String(t).trim();const m=t.replace(/```json|```/g,'').trim();let j=null;try{j=JSON.parse(m)}catch(e){const a=m.indexOf('{'),b=m.lastIndexOf('}');if(a>=0&&b>a){try{j=JSON.parse(m.slice(a,b+1))}catch(e2){}}}
+ return j&&typeof j.reply=='string'?j:{reply:t,actions:[]}}
+const CSYSS=`Sen kullanıcının kişisel koçusun (tıp öğrencisi, 102 günlük program: spor, bateri, İngilizce). Sorduğuna doğrudan, kısa ve doğru cevap ver, Türkçe. Veriyi yalnızca ilgiliyse kullan.
+Veri değiştirmek istenirse "actions" ekle; eklemeden "ekledim" deme. Action tipleri: {"type":"add|set","date":"YYYY-MM-DD","field":"st|fr|sp|li|bk|pr|tm|car|steps","value":sayı}, {"type":"work","date":"..","value":"TRAINING|REST|MISSED"}, {"type":"body","date":"..","w":kg,"c":bel}, {"type":"cfg","key":"rescue|target|strong|sess|gk|gp","value":sayı}, {"type":"sched","t":"başlık","time":"HH:MM","days":[0-6],"date":".."}. Alanlar: st planlı bateri, fr serbest bateri, sp konuşma, li dinleme, bk kitap, pr Preply.
+ÇIKTI SADECE JSON: {"reply":"...","actions":[]}`;
+function ctxS(){const t=today(),e=S.days[t]||{},r=calc(e),c=C();return`Bugün ${t}, ${dayN(t)<1?'program henüz başlamadı':'gün '+dayN(t)+'/'+N} (program ${S0} – ${ENDD}). Bugünkü kayıt: bateri ${r.dr} dk, İngilizce ${r.tot} dk (Preply ${r.pr}), diet ${e.diet||'-'}. Hedefler: bateri ${c.target} dk, İngilizce ${c.totN} dk.`}
+const coachCall=c=>aiAsk({tier:'default',system:c===2?CSYSS+'\n\nVERİ:\n'+ctxS():CSYS+'\n\nVERİ:\n'+ctx(c?3:14),msgs:hist(c===2?1:c?3:9)});
+async function csend(q){q=(q||ctxt).trim();if(!q||cbusy)return;S.chat=S.chat||[];S.chat.push({r:'u',t:q});ctxt='';cmsg='';
+ const lc=localCmd(q);if(lc){const snap=JSON.stringify(S),did=applyA(lc),rj=(applyA.rej||[]).slice();if(did.length){undoSnap=snap;S.chat.push({r:'a',t:'Tamam, kaydettim.',did,rej:rj});save();render();scrollTo(0,document.body.scrollHeight);return}if(rj.length){S.chat.push({r:'a',t:'Bunu kaydedemedim.',did:[],rej:rj});save();render();scrollTo(0,document.body.scrollHeight);return}}
+ cbusy=true;save();render();scrollTo(0,document.body.scrollHeight);
+ try{let raw,err0=null;for(const lv of[false,true,2]){try{raw=await coachCall(lv);err0=null;break}catch(e){if(!err0)err0=e;if(/not_granted|NOAI/.test((e&&(e.code||e.message))||''))throw e}}if(err0)throw err0;
+  const o=parseCoach(raw),a=String(o.reply||'').trim();if(!a)throw new Error('Boş yanıt');
+  const snap=JSON.stringify(S),did=applyA(o.actions),rej=(applyA.rej||[]).slice();undoSnap=did.length?snap:null;
+  S.chat.push({r:'a',t:a,did,rej,warn:!did.length&&!rej.length&&/(ekledim|kaydettim|güncelledim|yazdım|ayarladım|girdim|işledim)/i.test(a)});if(S.chat.length>40)S.chat=S.chat.slice(-40);save()}
+ catch(e){S.chat.pop();ctxt=q;save();cmsg=aiErr(e)}
  cbusy=false;render();scrollTo(0,document.body.scrollHeight)}
-const cq=['Bu haftayı değerlendir','Bugün için minimum plan öner','Sürtünme nerede, ne değiştirmeliyim?'];
-function coachV(){const M=S.chat||[];return`<h1>COACH</h1><div class=card><div class=mut>Verilerine (son 14 gün, haftalık skorlar, vücut ölçümleri) bakarak yorumlar. Tıbbi tavsiye değildir.</div>${cq.map((x,i)=>`<button class="btn s chip" onclick="csend(cq[${i}])">${x}</button>`).join('')}</div>
- ${M.map(m=>`<div class="mb ${m.r=='u'?'mu':'ma'}">${esc(m.t).replace(/\*\*/g,'').replace(/\n/g,'<br>')}</div>`).join('')}${cbusy?'<div class="mb ma mut">Düşünüyor…</div>':''}
- <div class=card style=margin-top:12px>${cmsg?`<div class=r style=margin-bottom:8px>${esc(cmsg)}</div>`:''}<textarea rows=2 placeholder="Coach'a yaz…" oninput="ctxt=this.value">${esc(ctxt)}</textarea><button class=btn onclick="csend()" ${cbusy?'disabled':''}>Gönder</button>${M.length?`<button class="btn s" onclick="if(confirm('Sohbet silinsin mi?')){S.chat=[];save();render()}">Sohbeti temizle</button>`:''}</div>`}
+function toast(m){const d=document.createElement('div');d.className='toast';d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3500)}
+const meter=(p,v,sub,l,go_)=>`<div class="mt tap" onclick="${go_}"><div class=lab><span>${l}</span><b class=num>${v}${sub?`<small> / ${sub}</small>`:''}</b></div>${bar(Math.max(0,Math.min(1,p||0)),1)}</div>`;
+const ICO={home:'<path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/>',today:'<rect x="3.5" y="5" width="17" height="16" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M9 15.5l2 2 4-4"/>',food:'<path d="M6 3v8a2.5 2.5 0 0 0 5 0V3M8.5 11v10"/><path d="M17 3c-1.5 2-2 3.8-2 6 0 1.5.8 2.5 2 2.5s2-1 2-2.5c0-2.2-.5-4-2-6zM17 12v9"/>',coach:'<rect x="4" y="7" width="16" height="12" rx="4"/><path d="M12 3v4M9 12.5h.01M15 12.5h.01M9.5 16h5"/>',prog:'<path d="M4 19V5M4 19h16"/><path d="M7.5 15.5 11 10l3 3 4.5-7"/>',gear:'<path d="M4 7h10M18 7h2M4 12h3M11 12h9M4 17h7M15 17h5"/><circle cx="16" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="13" cy="17" r="2"/>'};
+const ic=(n,sz)=>`<svg viewBox="0 0 24 24" ${sz?`style="width:${sz}px;height:${sz}px"`:''}>${ICO[n]}</svg>`;
+function home(){const t=today(),n=dayN(t),e=S.days[t]||{},r=calc(e),c=C(),s=streaks(),W=allW(),w=W[Math.min(NW-1,Math.max(0,Math.floor((n-1)/7)))],sc=w.score,miss=[];
+ if(!e.diet)miss.push('yemeğini yaz');if(r.d==='LOW')miss.push(`bateri +${c.rescue-r.dr} dk`);if(r.g==='LOW'){if(r.sp<c.spk)miss.push(`speaking +${c.spk-r.sp} dk`);if(r.tot<c.tot)miss.push(`İngilizce +${c.tot-r.tot} dk`)}
+ const P=pDay(t),st=n<1?'Başlamadı':sc==null?'Hafta yeni başladı':sc>=75?'Yolunda':sc>=60?'İdare eder':'Toparlanma haftası';
+ return`<div class=top><div><h1>1 Ocak Misyonu</h1><div class=mut>${st}</div></div><button class=gear onclick="mo='plan';go('more')">${ic('gear')}</button></div>
+ <div class=card><div class=row style=margin:0><div><div class=big2>${Math.min(Math.max(n,0),N)}<small> / ${N} gün</small></div></div><div style=text-align:right><div class=num style="font-size:22px;font-weight:500">${s.nz}</div><div class=mut>gün üst üste</div></div></div>${bar(n,N)}</div>
+ <div class=card>
+ ${meter(e.dscore?e.dscore/10:0,e.dscore?e.dscore:'—',e.dscore?'10':'','Beslenme',"go('food')")}
+ ${meter(c.sess?w.wo/c.sess:0,w.wo,c.sess,'Spor (bu hafta)',"cd=today();go('today')")}
+ ${meter(r.dr/c.target,r.dr,c.target,'Bateri',"cd=today();go('today')")}
+ ${meter(r.tot/c.totN,r.tot,c.totN,'İngilizce',"cd=today();go('today')")}
+ <div class="row tap" style="margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line)" onclick="cd=today();go('today')"><span class="${r.core?'g':''}">${r.core?'Core Day tamam':miss.length?'Eksik: '+miss.join(', '):'Zincir sürüyor'}</span><span class=mut>›</span></div></div>
+ ${P.length?`<div class=card><h2>Bugün</h2>${P.map(p=>`<div class="row tap" onclick="pTog(${p.id},'${t}')"><span>${p.time?`<b class=num>${p.time}</b>  `:''}${esc(p.t)}</span><span class="${pDone(p,t)?'g':'mut'}">${pDone(p,t)?'✓':'○'}</span></div>`).join('')}</div>`:''}
+ ${chainC()}${remH1()}`}
+function bump(k,d){const e=S.days[cd]||{},v=Math.max(0,(+e[k]||0)+d);setF(k,v||'');$('#f_'+k).value=v||''}
+function todayV(){const e=S.days[cd]||{},cl={TRAINING:'g',REST:'b',MISSED:'r'},
+ stp=(k,l)=>`<div class=st><label>${l}</label><button onclick="bump('${k}',-5)">−</button><input id=f_${k} type=number inputmode=numeric min=0 placeholder=0 value="${e[k]??''}" oninput="setF('${k}',this.value)"><button onclick="bump('${k}',5)">+5</button><button onclick="bump('${k}',15)">+15</button></div>`,
+ num=(k,l)=>`<label>${l}<input type=number inputmode=numeric min=0 value="${e[k]??''}" oninput="setF('${k}',this.value)"></label>`;
+ return`<h1>Günlük</h1>${nvH()}<div class=card id=sum style="position:sticky;top:env(safe-area-inset-top,0px);z-index:2">${sumH()}</div>
+ <div class="card tap" onclick="go('food')"><div class=row style=margin:0><h2 style=margin:0>Beslenme</h2>${e.dscore?`<span class="pill ${DC[e.diet]}">${e.diet} · ${e.dscore}/10</span>`:e.diet?`<span class="pill ${DC[e.diet]}">${e.diet}</span>`:'<span class=mut>ne yediğini yaz ›</span>'}</div></div>
+ <div class=card><h2>Spor</h2><div class=seg>${[['TRAINING','Antrenman'],['REST','Dinlenme'],['MISSED','Kaçtı']].map(([v,l])=>`<button class="${e.work===v?'on '+cl[v]:''}" onclick="tog('work','${v}')">${l}</button>`).join('')}</div>${e.work==='TRAINING'?`<details open><summary>Antrenman detayı</summary><div class=grid style=margin-top:10px>${num('tm','Süre (dk)')}${num('rpe','Zorluk (1-10)')}${num('car','Kardiyo (dk)')}<label>Ana egzersiz<input value="${esc(e.lift||'')}" oninput="setF('lift',this.value)"></label></div></details>`:''}</div>
+ <div class=card><h2>Bateri</h2>${stp('st','Planlı çalışma')}${stp('fr','Serbest / şarkı')}</div>
+ <div class=card><h2>İngilizce</h2>${stp('sp','Konuşma')}${stp('li','Dinleme')}<details ${e.pr||e.bk?'open':''}><summary>Preply · kitap</summary>${stp('pr','Preply')}${stp('bk','Kitap')}</details></div>
+ <details class=card><summary>Adım · not</summary><div class=grid style=margin-top:10px>${num('steps','Adım')}<div style=align-self:end><button class="btn s" style=margin:0 onclick=pasteSteps()>📋 Yapıştır</button></div></div><label style=margin-top:10px>Not<input value="${esc(e.note||'')}" oninput="setF('note',this.value)"></label></details>`}
+function prog(){const T=totals(),s=streaks(),W=allW(),t=today(),B=Object.entries(S.body).sort(),wt=B.filter(x=>x[1].w).map(x=>[x[0],+x[1].w]),wa=B.filter(x=>x[1].c).map(x=>[x[0],+x[1].c]),ft=B.filter(x=>x[1].fat).map(x=>[x[0],+x[1].fat]);
+ const stat=(a,b)=>`<div class=row><span>${a}</span><b>${b}</b></div>`,dt=(a,b,o)=>`<details class=card ${o?'open':''}><summary>${a}</summary><div style=margin-top:10px>${b}</div></details>`;
+ return`<h1>İlerleme</h1>${chainF()}
+ ${dt('Haftalık skor',`<table><tr><th></th><th>Skor</th><th>Diet</th><th>Spor</th><th>Drum</th><th>Eng</th><th>Boss</th></tr>${W.filter(x=>x.s<=t).map(x=>`<tr><td>W${x.i+1}</td><td><b>${x.score??'—'}</b></td><td>${Math.round(x.dp*100)}</td><td>${Math.round(x.sp*100)}</td><td>${Math.round(x.dq*100)}</td><td>${Math.round(x.eq*100)}</td><td>${x.cleared?'✓':'·'}${x.perfect?'⭐':''}</td></tr>`).join('')}</table><div class=mut>Devam eden haftada skor geçen gün sayısına göre hesaplanır.</div>`,1)}
+ ${dt('Kilo · bel · yağ',`<h2>Weight (kg)</h2>${chart(wt,'#ff6b35')}<h2 style=margin-top:14px>Waist (cm)</h2>${chart(wa,'#22d3a0')}${ft.length?`<h2 style=margin-top:14px>Body fat %</h2>${chart(ft,'#60a5fa')}`:''}`)}
+ ${dt('Toplamlar',`${stat('Drums total / structured',h(T.dr)+' h / '+h(T.st)+' h · '+rk(T.dr/60,[15,30,45,60]))}${stat('English total',h(T.tot)+' h · '+rk(T.tot/60,[10,20,35,50]))}${stat('Active / passive',h(T.act)+' h / '+h(T.pas)+' h')}${stat('Preply',T.pr+' ders')}${stat('Training',T.wo+' seans · '+h(T.tm)+' h')}${stat('Adım · son 7 gün ort.',stepsAvg())}${stat('Beslenme · son 7 gün ort.',favg())}`)}
+ ${dt('Rekorlar',`${stat('En uzun bateri günü',T.bdr+' dk')}${stat('En uzun İngilizce günü',T.ben+' dk')}${stat('Best week score',Math.max(0,...W.map(x=>x.score||0)))}${stat('Max bateri h / hafta',h(Math.max(0,...W.map(x=>x.drm))))}${stat('Max active English h / hafta',h(Math.max(0,...W.map(x=>x.acm))))}${stat('Max antrenman / hafta',Math.max(0,...W.map(x=>x.wo)))}${stat('Core zinciri (en iyi)',s.core+' ('+s.coreB+')')}`)}
+ <button class="btn s" onclick="mo='plan';go('more')">Program · Check-in · Awards · Ayarlar</button>`}
+const DW=['Pz','Pt','Sa','Ça','Pe','Cu','Ct'],dow=d=>dt(d).getDay(),hm=x=>/^\d{1,2}:\d{2}$/.test(x||'')?(x.length==4?'0'+x:x):'';
+const pOn=(p,d)=>p.date?p.date===d:(p.days||[]).includes(dow(d));
+const pDay=d=>(S.sched||[]).filter(p=>pOn(p,d)&&!(p.skip||[]).includes(d)).sort((a,b)=>(a.time||'99').localeCompare(b.time||'99'));
+const pDone=(p,d)=>(p.done||[]).includes(d);
+function pTog(id,d){const p=(S.sched||[]).find(x=>x.id==id);if(!p)return;p.done=p.done||[];const i=p.done.indexOf(d);i<0?p.done.push(d):p.done.splice(i,1);save();render()}
+const pDel=i=>{S.sched.splice(i,1);save();render()},pSkip=(id,d)=>{const p=S.sched.find(x=>x.id==id);if(p){p.skip=(p.skip||[]).concat(d);save();render()}};
+const PSYS=`Kullanıcı Türkçe serbest metinle bir program kaydı yazar. Bugün: {TODAY} ({TDW}). Gün numaraları: 0=Pazar,1=Pazartesi,2=Salı,3=Çarşamba,4=Perşembe,5=Cuma,6=Cumartesi.
+Metni tek bir kayda çevir. Haftalık tekrar ediyorsa days doldur (birden çok gün olabilir), date boş bırak. Tek seferlikse date'i YYYY-MM-DD ver ve days boş dizi olsun. "yarın", "haftaya salı" gibi ifadeleri bugüne göre çöz. Saat yoksa time boş string.
+SADECE şu JSON: {"t":"başlık","time":"HH:MM veya boş","days":[sayılar],"date":"YYYY-MM-DD veya boş","note":""}. Başlık kısa olsun, saat ve gün bilgisini başlığa koyma.`;
+let pnl='',pbusy=false,pmsg='',mopen=false;
+async function pNL(){const q=pnl.trim();if(!q||pbusy)return;pbusy=true;pmsg='';render();
+ try{const t=today(),o=await aiAsk({tier:'quick',json:1,system:PSYS.replace('{TODAY}',t).replace('{TDW}',DW[dow(t)]),msgs:[{role:'user',content:q}]});
+  const ti=String(o.t||'').trim();if(!ti)throw new Error('Başlık çıkarılamadı');const dts=/^\d{4}-\d\d-\d\d$/.test(o.date||'')?o.date:'';const dys=(Array.isArray(o.days)?o.days:[]).map(Number).filter(n=>n>=0&&n<=6);
+  if(!dts&&!dys.length)throw new Error('Gün anlaşılmadı, aşağıdan elle ekle');
+  S.sched=(S.sched||[]).concat({id:Date.now(),t:ti.slice(0,60),time:hm(String(o.time||'')),days:dts?[]:dys,date:dts,note:String(o.note||'').slice(0,80),done:[],skip:[]});save();pnl='';toast('Eklendi: '+ti)}
+ catch(e){pmsg=aiErr(e)}
+ pbusy=false;render()}
+let pf={t:'',time:'',days:[],date:'',note:''},popen=false;
+function pAdd(){const t=pf.t.trim();if(!t)return toast('Başlık gerekli');if(!pf.days.length&&!pf.date)return toast('Gün veya tarih seç');
+ S.sched=(S.sched||[]).concat({id:Date.now(),t,time:hm(pf.time),days:pf.date?[]:pf.days.slice(),date:pf.date||'',note:pf.note.trim(),done:[],skip:[]});save();pf={t:'',time:'',days:[],date:'',note:''};render()}
+const pdTog=n=>{const i=pf.days.indexOf(n);i<0?pf.days.push(n):pf.days.splice(i,1);render()};
+function todayPlanH(){const d=today(),L=pDay(d);if(!L.length)return'';
+ return`<div class=card><div class=row style=margin:0><h2 style=margin:0>Bugünkü program</h2><span class=mut onclick="mo='plan';go('more')">tümü ›</span></div>${L.map(p=>`<div class=row onclick="pTog(${p.id},'${d}')"><span>${p.time?`<b>${p.time}</b> `:''}${esc(p.t)}${p.note?` <span class=mut>${esc(p.note)}</span>`:''}</span><span class="${pDone(p,d)?'g':'mut'}">${pDone(p,d)?'✓':'○'}</span></div>`).join('')}</div>`}
+function planV(){const t=today(),up=[];for(let i=0;i<14;i++){const d=addD(t,i),L=pDay(d);if(L.length)up.push([d,L])}
+ return`<h1>Program</h1><div class=card><h2>Önümüzdeki 14 gün</h2>${up.length?up.map(([d,L])=>`<div style="border-bottom:1px solid var(--c2);padding:6px 0"><div class=mut>${d===t?'Bugün':d===addD(t,1)?'Yarın':DW[dow(d)]+' '+d.slice(8)+'.'+d.slice(5,7)}</div>${L.map(p=>`<div class=row style=margin:4px0><span onclick="pTog(${p.id},'${d}')">${p.time?`<b>${p.time}</b> `:''}${esc(p.t)} <span class="${pDone(p,d)?'g':'mut'}">${pDone(p,d)?'✓':'○'}</span></span>${p.days&&p.days.length?`<button class=x style=color:var(--m) onclick="pSkip(${p.id},'${d}')">bu haftayı atla</button>`:''}</div>`).join('')}</div>`).join(''):'<div class=mut>Program boş.</div>'}</div>
+ <div class=card><h2>Kayıtlı</h2>${(S.sched||[]).map((p,i)=>`<div class=row><span>${p.time?`<b>${p.time}</b> `:''}${esc(p.t)} <span class=mut>${p.date?p.date:(p.days||[]).map(n=>DW[n]).join(', ')}</span></span><button class=x onclick="pDel(${i})">✕</button></div>`).join('')||'<div class=mut>Yok</div>'}</div>
+ <div class=card><h2>Hızlı ekle</h2><textarea rows=2 placeholder="ör. her salı 20:00 Preply dersi · yarın 09:30 sözlü sınav" oninput="pnl=this.value">${esc(pnl)}</textarea><button class=btn onclick="pNL()" ${pbusy?'disabled':''}>${pbusy?'Ekleniyor…':'Ekle'}</button>${pmsg?`<div class=r style=margin-top:8px>${esc(pmsg)}</div>`:''}</div>
+ <details class=card ${mopen?'open':''} ontoggle="mopen=this.open"><summary>Elle ekle</summary><label style=margin-top:10px>Başlık<input value="${esc(pf.t)}" oninput="pf.t=this.value" placeholder="ör. Preply dersi"></label>
+ <div class=grid style=margin-top:8px><label>Saat<input value="${esc(pf.time)}" oninput="pf.time=this.value" placeholder="20:00" inputmode=numeric></label><label>Tek seferlik tarih<input type=date value="${esc(pf.date)}" onchange="pf.date=this.value;render()"></label></div>
+ ${pf.date?'<div class=mut style=margin-top:8px>Tarih seçili: tek seferlik. Haftalık için tarihi boşalt.</div>':`<div class=mut style=margin-top:8px>Haftalık tekrar</div><div class=seg style=flex-wrap:wrap>${DW.map((x,n)=>`<button class="${pf.days.includes(n)?'on b':''}" onclick="pdTog(${n})">${x}</button>`).join('')}</div>`}
+ <label>Not<input value="${esc(pf.note)}" oninput="pf.note=this.value" placeholder="isteğe bağlı"></label><button class=btn onclick="pAdd()">Ekle</button>
+ </details>
+ <div class=card><div class=mut>Bu program uygulamanın içinde; telefonun Takvim uygulamasına yazmaz ve bildirim göndermez. Saatli hatırlatma istiyorsan aynı şeyi telefonun Takvim/Hatırlatıcılar uygulamasına da kur.</div></div>`}
 const nvH=()=>`<div class=nv><button onclick="shift(-1)">‹</button><b>Day ${dayN(cd)} · ${cd}</b><button onclick="shift(1)" ${cd>=today()?'disabled style=opacity:.3':''}>›</button></div>`;
-function todayV(){const e=S.days[cd]||{},cl={'İYİ':'g',ORTA:'y','KÖTÜ':'r',TRAINING:'g',REST:'b',MISSED:'r'};
- const num=(k,l)=>`<label>${l}<input type=number inputmode=numeric min=0 value="${e[k]??''}" oninput="setF('${k}',this.value)"></label>`;
- const seg=(k,a)=>`<div class=seg>${a.map(v=>`<button class="${e[k]===v?'on '+cl[v]:''}" onclick="tog('${k}','${v}')">${v}</button>`).join('')}</div>`;
- return`<h1>TODAY</h1>${nvH()}
- <div class=card id=sum style="position:sticky;top:env(safe-area-inset-top,0px);z-index:2">${sumH()}</div>
- <div class=card><h2>Diet</h2>${seg('diet',['İYİ','ORTA','KÖTÜ'])}<h2>Sport</h2>${seg('work',['TRAINING','REST','MISSED'])}<div class=grid style=margin-bottom:10px>${num('steps','Adım (Apple Sağlık)')}<div style=align-self:end><button class="btn s" style=margin:0 onclick=pasteSteps()>📋 Panodan yapıştır</button></div></div>${e.work==='TRAINING'?`<div class=grid>${num('tm','Training dk')}${num('rpe','RPE 1-10')}${num('car','Cardio dk')}<label>Ana egzersiz / yük×tekrar<input value="${esc(e.lift||'')}" oninput="setF('lift',this.value)"></label></div>`:''}</div>
- <div class=card><h2>Drums</h2><div class=grid>${num('st','Structured dk')}${num('fr','Free / song dk')}</div></div>
- <div class=card><h2>English</h2><div class=grid>${num('sp','Speaking dk')}${num('pr','Preply dk')}${num('li','Listening dk')}${num('bk','Book dk')}</div></div>
- <div class=card><label>Not (performans / toparlanma)<input value="${esc(e.note||'')}" oninput="setF('note',this.value)"></label></div>`}
 function chart(p,col){if(p.length<2)return'<div class=mut>Grafik için 2+ ölçüm gerekir</div>';const W=300,H=90,v=p.map(x=>x[1]),mn=Math.min(...v),mx=Math.max(...v),g=mx-mn||1,xy=p.map((x,i)=>[i*W/(p.length-1),H-8-(x[1]-mn)/g*(H-18)]);
  return`<svg viewBox="0 0 ${W} ${H}" class=ch><polyline fill="none" stroke="${col}" stroke-width="2.5" points="${xy.map(a=>a.join(',')).join(' ')}"/>${xy.map(a=>`<circle cx="${a[0]}" cy="${a[1]}" r="3" fill="${col}"/>`).join('')}</svg><div class=mut>${v[0]} → ${v[v.length-1]} · min ${mn} · max ${mx}</div>`}
-function prog(){const T=totals(),s=streaks(),W=allW(),t=today(),B=Object.entries(S.body).sort(),wt=B.filter(x=>x[1].w).map(x=>[x[0],+x[1].w]),wa=B.filter(x=>x[1].c).map(x=>[x[0],+x[1].c]),ft=B.filter(x=>x[1].fat).map(x=>[x[0],+x[1].fat]);
- const stat=(a,b)=>`<div class=row><span>${a}</span><b>${b}</b></div>`;
- return`<h1>PROGRESS</h1><div class=card><h2>Weekly score</h2><table><tr><th></th><th>Skor</th><th>Diet</th><th>Spor</th><th>Drum</th><th>Eng</th><th>Boss</th></tr>${W.filter(x=>x.s<=t).map(x=>`<tr><td>W${x.i+1}</td><td><b>${x.score??'—'}</b></td><td>${Math.round(x.dp*100)}</td><td>${Math.round(x.sp*100)}</td><td>${Math.round(x.dq*100)}</td><td>${Math.round(x.eq*100)}</td><td>${x.cleared?'✓':'·'}${x.perfect?'⭐':''}</td></tr>`).join('')}</table><div class=mut>Devam eden haftada skor geçen gün sayısına göre hesaplanır.</div></div>
- <div class=card><h2>Weight (kg)</h2>${chart(wt,'#ff6b35')}</div><div class=card><h2>Waist (cm)</h2>${chart(wa,'#22d3a0')}</div>${ft.length?`<div class=card><h2>Body fat % (tartı)</h2>${chart(ft,'#60a5fa')}<div class=mut>Tartıdaki yağ ölçümü gün içi su durumuna göre oynar; tek değere değil trende bak.</div></div>`:''}
- <div class=card><h2>Totals</h2>${stat('Drums total / structured',h(T.dr)+' h / '+h(T.st)+' h · '+rk(T.dr/60,[15,30,45,60]))}${stat('English total',h(T.tot)+' h · '+rk(T.tot/60,[10,20,35,50]))}${stat('Active / passive',h(T.act)+' h / '+h(T.pas)+' h')}${stat('Preply',T.pr+' ders')}${stat('Training',T.wo+' seans · '+h(T.tm)+' h')}${stat('Adım · son 7 gün ort.',stepsAvg())}${stat('Beslenme · son 7 gün ort.',favg())}</div>
- <div class=card><h2>Streak & adherence</h2>${stat('No-zero streak (best)',s.nz+' ('+s.nzB+')')}${stat('Core streak (best)',s.core+' ('+s.coreB+')')}${stat('Adherence',T.adh+'%')}</div>
- <div class=card><h2>Personal bests</h2>${stat('En uzun bateri günü',T.bdr+' dk')}${stat('En uzun İngilizce günü',T.ben+' dk')}${stat('Best week score',Math.max(0,...W.map(x=>x.score||0)))}${stat('Max bateri h / hafta',h(Math.max(0,...W.map(x=>x.drm))))}${stat('Max active English h / hafta',h(Math.max(0,...W.map(x=>x.acm))))}${stat('Max antrenman / hafta',Math.max(0,...W.map(x=>x.wo)))}${wt.length?stat('En düşük kilo / bel',Math.min(...wt.map(x=>x[1]))+' / '+(wa.length?Math.min(...wa.map(x=>x[1])):'—')):''}</div>`}
 const fl=(a,k,f,[l,ty],ph)=>{const v=esc((S[a][k]||{})[f]??'');return ty=='t'?`<label>${l}<textarea rows=2 oninput="sv('${a}','${k}','${f}',this.value)">${v}</textarea></label>`:`<label>${l}<input type=number inputmode=decimal value="${v}" oninput="sv('${a}','${k}','${f}',this.value)"></label>`};
 const BE=[['Turkish-free dk','n'],['Pauses >3 sn','n'],['Self-corrections','n'],['Fluency 1-5','n'],['Accuracy 1-5','n'],['Vocabulary 1-5','n'],['Pronunciation 1-5','n'],['Teacher/Preply note','t']],BD=[['Groove / rudiment','t'],['Clean BPM','n'],['Clean minutes','n'],['Major errors','n'],['Full song','t'],['Song completion 1-5','n'],['Timing 1-5','n'],['Control 1-5','n']],STG=['Baseline','4w','8w','12w','Final'];
-function check(){const tabs=['body','review','bench'],n=dayN(today());if(rw==null)rw=Math.min(14,Math.max(0,Math.floor((n-1)/7)));
+function check(){const tabs=['body','review','bench'],n=dayN(today());if(rw==null)rw=Math.min(NW-1,Math.max(0,Math.floor((n-1)/7)));
  let b='';if(ci=='body'){const e=S.body[bd]||{},L=Object.entries(S.body).sort().reverse().slice(0,6);b=`<div class=card><label>Tarih (sabah, aç karnına)<input type=date value="${bd}" onchange="bd=this.value;render()"></label><div class=grid><label>Weight kg<input type=number step=0.1 inputmode=decimal value="${e.w??''}" oninput="sv('body','${bd}','w',this.value)"></label><label>Waist cm<input type=number step=0.1 inputmode=decimal value="${e.c??''}" oninput="sv('body','${bd}','c',this.value)"></label></div><div class=grid style=margin-top:10px><label>Yağ % (tartı)<input type=number step=0.1 inputmode=decimal value="${e.fat??''}" oninput="sv('body','${bd}','fat',this.value)"></label><label>Kas kg (tartı)<input type=number step=0.1 inputmode=decimal value="${e.mus??''}" oninput="sv('body','${bd}','mus',this.value)"></label></div></div><div class=card><table><tr><th>Tarih</th><th>kg</th><th>cm</th><th>yağ%</th></tr>${L.map(x=>`<tr><td>${x[0]}</td><td>${x[1].w||''}</td><td>${x[1].c||''}</td><td>${x[1].fat||''}</td></tr>`).join('')}</table></div>`}
  if(ci=='review'){const k='W'+(rw+1);b=`<div class=card><label>Hafta<select onchange="rw=+this.value;render()">${weeks.map(w=>`<option value=${w.i} ${w.i==rw?'selected':''}>W${w.i+1} · ${w.s}</option>`).join('')}</select></label>${['Best win','Biggest friction','Why did it happen?','ONE adjustment','Next week focus'].map((l,i)=>fl('rev',k,'f'+i,[l,'t'])).join('')}<div class=grid>${fl('rev',k,'en',['Energy 1-5','n'])}${fl('rev',k,'cf',['Confidence 1-5','n'])}</div></div>`}
  if(ci=='bench'){const G=(p,F)=>`<div class=card><h2>${p=='en'?'English speaking (5 dk)':'Drums'}</h2>${p=='en'?'<div class=mut>Aynı prompt: “Explain a complex topic, give your opinion, justify it and give one example.”</div>':''}<div class=grid>${F.map((f,i)=>fl('bench',p+bs,'f'+i,f)).join('')}</div></div>`;
   const cmp=(p,F)=>F.map((f,i)=>f[1]=='n'?`<tr><td>${f[0]}</td>${STG.map(s=>`<td>${(S.bench[p+s]||{})['f'+i]??'·'}</td>`).join('')}</tr>`:'').join('');
   b=`<div class="seg">${STG.map(s=>`<button class="${s==bs?'on b':''}" onclick="bs='${s}';render()">${s}</button>`).join('')}</div>${G('en',BE)}${G('dr',BD)}<div class=card style="overflow:auto"><h2>Karşılaştırma</h2><table><tr><th></th>${STG.map(s=>`<th>${s}</th>`).join('')}</tr>${cmp('en',BE)}${cmp('dr',BD)}</table></div>`}
- return`<h1>CHECK-IN</h1><div class=seg>${tabs.map(t=>`<button class="${t==ci?'on g':''}" onclick="ci='${t}';render()">${{body:'Body',review:'Weekly Review',bench:'Benchmarks'}[t]}</button>`).join('')}</div>${b}`}
+ return`<h1>Check-in</h1><div class=seg>${tabs.map(t=>`<button class="${t==ci?'on g':''}" onclick="ci='${t}';render()">${{body:'Body',review:'Weekly Review',bench:'Benchmarks'}[t]}</button>`).join('')}</div>${b}`}
 const RF=[['gk','Günlük kcal hedefi (0 = yok)'],['gp','Protein hedefi g (0 = yok)'],['rescue','Drums rescue dk'],['target','Drums target dk'],['strong','Drums strong dk'],['stMin','Structured min (target/strong)'],['spk','Speaking min (English minimum)'],['tot','Total English min'],['actN','Active normal'],['totN','Total normal'],['actS','Active strong'],['totS','Total strong'],['sess','Spor seans/hafta']];
 let mo='check';
-function moreV(){const t=[['check','Check-in'],['awards','Awards'],['set','Settings']];return`<div class=seg style=margin-top:10px>${t.map(x=>`<button class="${x[0]==mo?'on g':''}" onclick="mo='${x[0]}';render()">${x[1]}</button>`).join('')}</div>`+(mo=='check'?check():mo=='awards'?awardsV():setV())}
+function moreV(){const t=[['plan','Program'],['check','Check-in'],['awards','Awards'],['set','Settings']];return`<div class=seg style=margin-top:10px>${t.map(x=>`<button class="${x[0]==mo?'on g':''}" onclick="mo='${x[0]}';render()">${x[1]}</button>`).join('')}</div>`+(mo=='plan'?planV():mo=='check'?check():mo=='awards'?awardsV():setV())}
 function awardsV(){const T=totals(),s=streaks(),W=allW(),L=lvl(T.xp),c=C();
- return`<h1>ACHIEVEMENTS</h1><div class=card><div class=row><span class=big>LV ${L.n}</span><b>${L.t}</b></div>${bar(L.p,1)}<div class=mut>${T.xp} XP${L.nx?' · sonraki level için '+L.nx:''}</div></div>
+ return`<h1>Başarımlar</h1><div class=card><div class=row><span class=big>LV ${L.n}</span><b>${L.t}</b></div>${bar(L.p,1)}<div class=mut>${T.xp} XP${L.nx?' · sonraki level için '+L.nx:''}</div></div>
  <div class=card><h2>Badges</h2><div class=bg>${BG.map(b=>`<div class="bd ${b[2](T,s,W)?'u':''}"><b>${b[0]}</b><br>${b[1]}</div>`).join('')}</div></div>
  <div class=card><h2>Weekly bosses</h2>${W.filter(x=>x.s<=today()).map(x=>`<div class=row><span>W${x.i+1} ${x.boss.n}</span><b class="${x.cleared?'g':'mut'}">${Math.round(x.boss.v*10)/10}/${x.boss.t}${x.cleared?' ✓':''}${x.perfect?' ⭐':''}</b></div>`).join('')}</div>
  ${jan()}`}
-function setV(){const c=C(),ai=AI();return`<h1>SETTINGS</h1><div class=card><h2>AI · yemek analizi</h2><label>Anthropic API key<input type=password autocomplete=off placeholder="sk-ant-…" value="${esc(ai.key||'')}" onchange="aiSet('key',this.value.trim())"></label><label style=margin-top:8px>Yemek modeli (ucuz/hızlı)<input value="${esc(ai.model||'claude-haiku-4-5-20251001')}" onchange="aiSet('model',this.value.trim())"></label><label style=margin-top:8px>Coach modeli<input value="${esc(ai.cmodel||'claude-sonnet-5')}" onchange="aiSet('cmodel',this.value.trim())"></label><div class=mut style=margin-top:8px>Anahtar yalnızca bu telefonda saklanır, yedeğe girmez. console.anthropic.com → API keys. API kullanımı Claude aboneliğinden ayrı faturalanır; yemek başına maliyet çok düşüktür.</div></div>
+function setV(){const c=C(),ai=AI();return`<h1>Ayarlar</h1><div class=card><h2>Diyet planım</h2><textarea rows=4 placeholder="AI puanlamada bunu ölçüt alır. ör. günlük ~1900 kcal, 140 g protein, akşam 20:00'den sonra yemek yok, şekerli içecek yok" onchange="S.plan=this.value;save()">${esc(S.plan||'')}</textarea></div>
+ <div class=card><h2>AI</h2>${window.claude?'<div class=mut>Bu sürüm Claude hesabınla çalışır; API anahtarı gerekmez.</div>':`<label>Anthropic API key<input type=password autocomplete=off placeholder="sk-ant-…" value="${esc(ai.key||'')}" onchange="aiSet('key',this.value.trim())"></label><label style=margin-top:8px>Yemek modeli<input value="${esc(ai.model||'claude-haiku-4-5-20251001')}" onchange="aiSet('model',this.value.trim())"></label><label style=margin-top:8px>Coach modeli<input value="${esc(ai.cmodel||'claude-sonnet-5')}" onchange="aiSet('cmodel',this.value.trim())"></label><div class=mut style=margin-top:8px>Anahtar yalnızca bu telefonda saklanır, yedeğe girmez. console.anthropic.com → API keys. Kullanım Claude aboneliğinden ayrı faturalanır.</div>`}<button class="btn s" onclick=aiTest()>Bağlantıyı test et</button><div id=aitest class=mut style="margin-top:8px;white-space:pre-line"></div></div>
  <div class=card><h2>Apple Sağlık · adım</h2><div class=mut>Ana ekran uygulaması Sağlık'a doğrudan erişemez (iOS izin vermez). Yol: Kısayollar'da adımı hesaplayıp panoya kopyalayan bir kısayol yap, sonra Today'de “Panodan yapıştır”a bas. Elle yazmak da olur.</div></div><div class=card><h2>Rules & goals</h2><div class=grid>${RF.map(f=>`<label>${f[1]}<input type=number inputmode=numeric value="${c[f[0]]}" onchange="S.cfg['${f[0]}']=+this.value;save()"></label>`).join('')}</div><div class=mut style="margin-top:8px">Eşik değiştirmek geçmiş günlerin durumunu da yeniden hesaplar. XP tablosu ve level eşikleri sabit.</div></div>
- <div class=card><h2>Veri yedeği</h2><button class="btn s" onclick="bak()">Yedeği kaydet (Dosyalar)</button><label class="btn s" style="display:block;text-align:center">Dosyadan yükle<input type=file accept=".json,application/json" hidden onchange="impF(this)"></label><textarea id=imp rows=2 placeholder="Yedeği buraya yapıştır"></textarea><button class="btn s" onclick="try{S=Object.assign(DEF(),JSON.parse($('#imp').value));save();alert('Yüklendi');render()}catch(e){alert('Geçersiz yedek')}">İçe aktar</button></div>`}
+ <div class=card><h2>Veri yedeği</h2><button class="btn s" onclick="bak()">Yedeği kaydet (Dosyalar)</button><label class="btn s" style="display:block;text-align:center">Dosyadan yükle<input type=file accept=".json,application/json" hidden onchange="impF(this)"></label><textarea id=imp rows=2 placeholder="Yedeği buraya yapıştır"></textarea><button class="btn s" onclick="try{S=Object.assign(DEF(),JSON.parse($('#imp').value));save();toast('Yüklendi');render()}catch(e){toast('Geçersiz yedek')}">İçe aktar</button></div>`}
 function render(){$('#app').innerHTML={home,today:todayV,food:foodV,coach:coachV,prog,more:moreV}[tab]();
- $('#nav').innerHTML=[['home','🏠','Home'],['today','✅','Today'],['food','🍽️','Food'],['coach','🤖','Coach'],['prog','📈','Progress'],['more','⚙️','More']].map(x=>`<button class="${x[0]==tab?'on':''}" onclick="go('${x[0]}')"><b>${x[1]}</b>${x[2]}</button>`).join('')}
+ $('#nav').innerHTML=[['home','home','Bugün'],['today','today','Günlük'],['food','food','Beslenme'],['coach','coach','Koç'],['prog','prog','İlerleme']].map(x=>`<button class="${x[0]==tab?'on':''}" onclick="go('${x[0]}')">${ic(x[1])}${x[2]}</button>`).join('')}
 (()=>{const q=new URLSearchParams(location.search),st=q.get('steps'),w=q.get('w'),d=/^\d{4}-\d\d-\d\d$/.test(q.get('d')||'')?q.get('d'):today();if(st!==null&&+st>=0)(S.days[d]=S.days[d]||{}).steps=Math.round(+st);if(w&&+w>0)S.body[d]=Object.assign(S.body[d]||{},{w:String(+w)});if(st!==null||w){save();history.replaceState(null,'',location.pathname)}})();
+if(!LSOK&&window.storage)window.storage.get(K).then(r=>{if(r&&r.value){S=Object.assign(DEF(),JSON.parse(r.value));render()}}).catch(()=>{});
+if((S.chatv||0)<3){S.chat=[];S.chatv=3;save()}
 let lastT=today();document.addEventListener&&document.addEventListener('visibilitychange',()=>{if(document.hidden)return;const t=today();if(cd===lastT)cd=t;if(bd===lastT)bd=t;lastT=t;render()});
 render();navigator.storage&&navigator.storage.persist&&navigator.storage.persist();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
